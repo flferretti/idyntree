@@ -198,6 +198,14 @@
             </dt>
             <dd>Set the (internal) joint positions.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3eee3e784003d54a13e0d4e709bd25db" class="m-doc">setWorldBaseTransform</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Transform.html" class="m-doc">iDynTree::<wbr />Transform</a>&amp; world_T_base) -&gt; bool</span>
+            </dt>
+            <dd>Set the world base transform.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aecb1ebd721765d1fdc2799b169e1b548" class="m-doc">setWorldBaseTransform</a>(</span><span class="m-doc-wrap"><a href="classiDynTree_1_1MatrixView.html" class="m-doc">iDynTree::<wbr />MatrixView</a>&lt;const double&gt;&amp; world_T_base) -&gt; bool</span>
+            </dt>
+            <dd>Set the world base transform (<a href="classiDynTree_1_1MatrixView.html" class="m-doc">MatrixView</a> implementation).</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a2e499491547624639c1765216e0d1f38" class="m-doc">setRobotState</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Transform.html" class="m-doc">iDynTree::<wbr />Transform</a>&amp; world_T_base,
               const <a href="classiDynTree_1_1VectorDynSize.html" class="m-doc">iDynTree::<wbr />VectorDynSize</a>&amp; s,
               const <a href="classiDynTree_1_1Twist.html" class="m-doc">iDynTree::<wbr />Twist</a>&amp; base_velocity,
@@ -535,6 +543,10 @@
             </dt>
             <dd>Get the jacobian of the average velocity of the robot.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#aae744a3efa13c67705ff9bed0f3cfa91" class="m-doc">getRobotLockedInertia</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classiDynTree_1_1SpatialInertia.html" class="m-doc">SpatialInertia</a></span>
+            </dt>
+            <dd>Get the robot locked inertia matrix.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#a5fa53ab2ec3bef686b04d5502d249bf6" class="m-doc">getCentroidalAverageVelocity</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classiDynTree_1_1Twist.html" class="m-doc">iDynTree::<wbr />Twist</a></span>
             </dt>
             <dd>Get the centroidal average velocity of the robot.</dd>
@@ -550,6 +562,10 @@
               <span class="m-doc-wrap-bumper">auto <a href="#a6d3e6f8f94959fdc1588f5ea62ff28a4" class="m-doc">getCentroidalAverageVelocityJacobian</a>(</span><span class="m-doc-wrap"><a href="classiDynTree_1_1MatrixView.html" class="m-doc">iDynTree::<wbr />MatrixView</a>&lt;double&gt; centroidalAvgVelocityJacobian) -&gt; bool</span>
             </dt>
             <dd>Get the jacobian of the centroidal average velocity of the robot (<a href="classiDynTree_1_1MatrixView.html" class="m-doc">MatrixView</a> version).</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a3326cb327c1123b7e3c26f0b752a4196" class="m-doc">getCentroidalRobotLockedInertia</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classiDynTree_1_1SpatialInertia.html" class="m-doc">SpatialInertia</a></span>
+            </dt>
+            <dd>Get the robot locked centroidal inertia matrix.</dd>
             <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#ad0399a36b1167706f317ce1e861c2ca0" class="m-doc">getLinearAngularMomentum</a>(</span><span class="m-doc-wrap">) -&gt; <a href="classiDynTree_1_1SpatialMomentum.html" class="m-doc">iDynTree::<wbr />SpatialMomentum</a></span>
             </dt>
@@ -1366,6 +1382,54 @@ $L$
               </tfoot>
             </table>
 <p>(<a href="classiDynTree_1_1Span.html" class="m-doc">Span</a> implementation)</p><aside class="m-note m-info"><h4>Note</h4><p>This method sets only the joint positions, leaving all the other components of the state to their previous value.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3eee3e784003d54a13e0d4e709bd25db"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool iDynTree::<wbr />KinDynComputations::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3eee3e784003d54a13e0d4e709bd25db" class="m-doc-self">setWorldBaseTransform</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Transform.html" class="m-doc">iDynTree::<wbr />Transform</a>&amp; world_T_base)</span></span>
+            </h3>
+            <p>Set the world base transform.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">world_T_base&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>the homogeneous transformation that transforms position vectors expressed in the base reference frame in position frames expressed in the world reference frame (i.e. pos_world = world_T_base*pos_base .</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if all went well, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This method sets only the world base transform, leaving all the other components of the state to their previous value.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="aecb1ebd721765d1fdc2799b169e1b548"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool iDynTree::<wbr />KinDynComputations::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aecb1ebd721765d1fdc2799b169e1b548" class="m-doc-self">setWorldBaseTransform</a>(</span><span class="m-doc-wrap"><a href="classiDynTree_1_1MatrixView.html" class="m-doc">iDynTree::<wbr />MatrixView</a>&lt;const double&gt;&amp; world_T_base)</span></span>
+            </h3>
+            <p>Set the world base transform (<a href="classiDynTree_1_1MatrixView.html" class="m-doc">MatrixView</a> implementation).</p>
+            <table class="m-table m-fullwidth m-flat">
+              <thead>
+                <tr><th colspan="2">Parameters</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="width: 1%">world_T_base&nbsp;<span class="m-label m-flat m-info">in</span></td>
+                  <td>the homogeneous transformation that transforms position vectors expressed in the base reference frame in position frames expressed in the world reference frame (i.e. pos_world = world_T_base*pos_base .</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th>Returns</th>
+                  <td>true if all went well, false otherwise.</td>
+                </tr>
+              </tfoot>
+            </table>
+<aside class="m-note m-info"><h4>Note</h4><p>This method sets only the world base transform, leaving all the other components of the state to their previous value.</p></aside>
           </div></section>
           <section class="m-doc-details" id="a2e499491547624639c1765216e0d1f38"><div>
             <h3>
@@ -2721,6 +2785,21 @@ $\nu $
             </table>
 <p>(<a href="classiDynTree_1_1MatrixView.html" class="m-doc">MatrixView</a> implementation) The quantity is expressed in (B[A]), (A) or (B) depending on the FrameVelocityConvention used.</p><aside class="m-note m-info"><h4>Note</h4><p>the linear part of this jacobian correspond to the getCenterOfMassVelocity only if the FrameVelocityConvention is set to MIXED.</p><p>Implementation incomplete, please refrain to use until this warning has been removed.</p></aside><aside class="m-note m-danger"><h4>Warning</h4><p>the <a href="classiDynTree_1_1MatrixView.html" class="m-doc">MatrixView</a> object should point an already existing memory. Memory allocation and resizing cannot be achieved with this kind of objects.</p></aside>
           </div></section>
+          <section class="m-doc-details" id="aae744a3efa13c67705ff9bed0f3cfa91"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classiDynTree_1_1SpatialInertia.html" class="m-doc">SpatialInertia</a> iDynTree::<wbr />KinDynComputations::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#aae744a3efa13c67705ff9bed0f3cfa91" class="m-doc-self">getRobotLockedInertia</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Get the robot locked inertia matrix.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>the locked inertia matrix of the robot.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The quantity is expressed in (B[A]), (A) or (B) depending on the FrameVelocityConvention used.</p>
+          </div></section>
           <section class="m-doc-details" id="a5fa53ab2ec3bef686b04d5502d249bf6"><div>
             <h3>
               <span class="m-doc-wrap-bumper"><a href="classiDynTree_1_1Twist.html" class="m-doc">iDynTree::<wbr />Twist</a> iDynTree::<wbr />KinDynComputations::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a5fa53ab2ec3bef686b04d5502d249bf6" class="m-doc-self">getCentroidalAverageVelocity</a>(</span><span class="m-doc-wrap">)</span></span>
@@ -2764,6 +2843,21 @@ $\nu $
               </tfoot>
             </table>
 <p>See the getCentroidalAverageVelocity method for more info on this.</p><aside class="m-note m-danger"><h4>Warning</h4><p>the <a href="classiDynTree_1_1Span.html" class="m-doc">Span</a> object should point an already existing memory. Memory allocation and resizing cannot be achieved with this kind of objects.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a3326cb327c1123b7e3c26f0b752a4196"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper"><a href="classiDynTree_1_1SpatialInertia.html" class="m-doc">SpatialInertia</a> iDynTree::<wbr />KinDynComputations::<wbr /></span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a3326cb327c1123b7e3c26f0b752a4196" class="m-doc-self">getCentroidalRobotLockedInertia</a>(</span><span class="m-doc-wrap">)</span></span>
+            </h3>
+            <p>Get the robot locked centroidal inertia matrix.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>the locked inertia centroidal matrix of the robot.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>The quantity is expressed in (G[A]) or (G[B]) depending on the FrameVelocityConvention used.</p>
           </div></section>
           <section class="m-doc-details" id="ad0399a36b1167706f317ce1e861c2ca0"><div>
             <h3>

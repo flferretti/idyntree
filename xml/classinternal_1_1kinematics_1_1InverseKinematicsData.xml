@@ -32,9 +32,9 @@
         </inbodydescription>
         <location file="private/InverseKinematicsData.h" line="71" column="17" bodyfile="private/InverseKinematicsData.h" bodystart="71" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae5384d50c5f3648498eaffb119b8f7dc" prot="public" static="no" mutable="no">
-        <type>struct internal::kinematics::InverseKinematicsData::@1</type>
-        <definition>struct internal::kinematics::InverseKinematicsData::@1 internal::kinematics::InverseKinematicsData::m_state</definition>
+      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1a800b27768852ee09b3d4f455db133f0d" prot="public" static="no" mutable="no">
+        <type>struct internal::kinematics::InverseKinematicsData::@4</type>
+        <definition>struct internal::kinematics::InverseKinematicsData::@4 internal::kinematics::InverseKinematicsData::m_state</definition>
         <argsstring></argsstring>
         <name>m_state</name>
         <briefdescription>
@@ -60,9 +60,9 @@
         </inbodydescription>
         <location file="private/InverseKinematicsData.h" line="85" column="12" bodyfile="private/InverseKinematicsData.h" bodystart="85" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1a74b39d1c7ab83b3c7e65b7f4c944ae3b" prot="public" static="no" mutable="no">
-        <type>struct internal::kinematics::InverseKinematicsData::@2</type>
-        <definition>struct internal::kinematics::InverseKinematicsData::@2 internal::kinematics::InverseKinematicsData::m_reducedVariablesInfo</definition>
+      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1a596e5dd0d908f75ca67683f9e5bc349e" prot="public" static="no" mutable="no">
+        <type>struct internal::kinematics::InverseKinematicsData::@5</type>
+        <definition>struct internal::kinematics::InverseKinematicsData::@5 internal::kinematics::InverseKinematicsData::m_reducedVariablesInfo</definition>
         <argsstring></argsstring>
         <name>m_reducedVariablesInfo</name>
         <briefdescription>
@@ -584,7 +584,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>joint configuration <formula id="137">$ q_j \in \mathbb{R}^n $</formula> </para>
+<para>joint configuration <formula id="336">$ q_j \in \mathbb{R}^n $</formula> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -598,7 +598,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>base position <formula id="138">$ {}^w H_{base} \in SE(3) $</formula> </para>
+<para>base position <formula id="337">$ {}^w H_{base} \in SE(3) $</formula> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -612,7 +612,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>joint velotiy <formula id="139">$ \dot{q}_j \in \mathbb{R}^n $</formula> </para>
+<para>joint velotiy <formula id="338">$ \dot{q}_j \in \mathbb{R}^n $</formula> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -626,7 +626,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>base velocity <formula id="140">$ [\dot{p}, {}^I \omega] \in se(3) $</formula> </para>
+<para>base velocity <formula id="339">$ [\dot{p}, {}^I \omega] \in se(3) $</formula> </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -766,9 +766,9 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
-      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1a8846e32c77f80603683f5afe35317759" prot="private" static="no" mutable="no">
-        <type>struct internal::kinematics::InverseKinematicsData::@0</type>
-        <definition>struct internal::kinematics::InverseKinematicsData::@0 internal::kinematics::InverseKinematicsData::m_comTarget</definition>
+      <memberdef kind="variable" id="classinternal_1_1kinematics_1_1InverseKinematicsData_1aba7b2e764e0951b43b16a62049496948" prot="private" static="no" mutable="no">
+        <type>struct internal::kinematics::InverseKinematicsData::@3</type>
+        <definition>struct internal::kinematics::InverseKinematicsData::@3 internal::kinematics::InverseKinematicsData::m_comTarget</definition>
         <argsstring></argsstring>
         <name>m_comTarget</name>
         <briefdescription>
@@ -1499,36 +1499,36 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="26">
+      <node id="24">
         <label>std::vector&lt; iDynTree::FrameIndex &gt;</label>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; iDynTree::FrameIndex &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="16">
+      <node id="15">
         <label>iDynTree::Model</label>
         <link refid="classiDynTree_1_1Model"/>
       </node>
-      <node id="8">
+      <node id="7">
         <label>iDynTree::VectorFixSize&lt; VecSize &gt;</label>
         <link refid="classiDynTree_1_1VectorFixSize"/>
       </node>
-      <node id="27">
+      <node id="25">
         <label>iDynTree::Twist</label>
         <link refid="classiDynTree_1_1Twist"/>
-        <childnode refid="28" relation="public-inheritance">
+        <childnode refid="26" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="14">
+      <node id="13">
         <label>K</label>
       </node>
-      <node id="10">
+      <node id="9">
         <label>T</label>
       </node>
-      <node id="20">
+      <node id="19">
         <label>iDynTree::Rotation</label>
         <link refid="classiDynTree_1_1Rotation"/>
-        <childnode refid="21" relation="public-inheritance">
+        <childnode refid="20" relation="public-inheritance">
         </childnode>
       </node>
       <node id="2">
@@ -1536,67 +1536,61 @@
         <childnode refid="3" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; iDynTree::Polygon &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="6">
-        <label>iDynTree::PositionRaw</label>
-        <link refid="classiDynTree_1_1PositionRaw"/>
-        <childnode refid="7" relation="public-inheritance">
+      <node id="34">
+        <label>iDynTree::Direction</label>
+        <link refid="classiDynTree_1_1Direction"/>
+        <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
       <node id="36">
-        <label>iDynTree::Direction</label>
-        <link refid="classiDynTree_1_1Direction"/>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="38">
         <label>iDynTree::MatrixDynSize</label>
         <link refid="classiDynTree_1_1MatrixDynSize"/>
       </node>
-      <node id="43">
+      <node id="41">
         <label>std::vector&lt; iDynTree::Transform &gt;</label>
-        <childnode refid="19" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; iDynTree::Transform &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="44">
+      <node id="42">
         <label>iDynTree::VectorDynSize</label>
         <link refid="classiDynTree_1_1VectorDynSize"/>
       </node>
-      <node id="9">
+      <node id="8">
         <label>std::vector&lt; T &gt;</label>
-        <childnode refid="10" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="18">
+      <node id="17">
         <label>std::unordered_map&lt; K, T &gt;</label>
-        <childnode refid="14" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
-      <node id="40">
+      <node id="38">
         <label>iDynTree::MatrixFixSize&lt; 2, 3 &gt;</label>
         <link refid="classiDynTree_1_1MatrixFixSize"/>
-        <childnode refid="23" relation="template-instance">
+        <childnode refid="21" relation="template-instance">
           <edgelabel>&lt; 2, 3 &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="13">
+      <node id="12">
         <label>std::map&lt; K, T &gt;</label>
-        <childnode refid="14" relation="usage">
+        <childnode refid="13" relation="usage">
           <edgelabel>keys</edgelabel>
         </childnode>
-        <childnode refid="10" relation="usage">
+        <childnode refid="9" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
       </node>
@@ -1606,55 +1600,55 @@
         <childnode refid="2" relation="usage">
           <edgelabel>m_comHullConstraint_supportPolygons</edgelabel>
         </childnode>
-        <childnode refid="11" relation="usage">
+        <childnode refid="10" relation="usage">
           <edgelabel>m_constraints</edgelabel>
           <edgelabel>m_targets</edgelabel>
         </childnode>
-        <childnode refid="15" relation="usage">
+        <childnode refid="14" relation="usage">
           <edgelabel>m_dynamics</edgelabel>
         </childnode>
-        <childnode refid="16" relation="usage">
+        <childnode refid="15" relation="usage">
           <edgelabel>reducedModel</edgelabel>
         </childnode>
-        <childnode refid="17" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>modelJointsToOptimisedJoints</edgelabel>
         </childnode>
-        <childnode refid="19" relation="usage">
+        <childnode refid="18" relation="usage">
           <edgelabel>basePose</edgelabel>
           <edgelabel>m_baseInitialCondition</edgelabel>
           <edgelabel>m_baseResults</edgelabel>
         </childnode>
-        <childnode refid="24" relation="usage">
+        <childnode refid="22" relation="usage">
           <edgelabel>m_solverName</edgelabel>
         </childnode>
-        <childnode refid="26" relation="usage">
+        <childnode refid="24" relation="usage">
           <edgelabel>m_comHullConstraint_supportFramesIndeces</edgelabel>
         </childnode>
-        <childnode refid="27" relation="usage">
+        <childnode refid="25" relation="usage">
           <edgelabel>baseTwist</edgelabel>
         </childnode>
-        <childnode refid="33" relation="usage">
+        <childnode refid="31" relation="usage">
           <edgelabel>m_jointLimits</edgelabel>
         </childnode>
-        <childnode refid="34" relation="usage">
+        <childnode refid="32" relation="usage">
           <edgelabel>m_comHullConstraint_projDirection</edgelabel>
           <edgelabel>worldGravity</edgelabel>
         </childnode>
-        <childnode refid="35" relation="usage">
+        <childnode refid="33" relation="usage">
           <edgelabel>fixedVariables</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>desiredPosition</edgelabel>
           <edgelabel>m_comHullConstraint_originOfPlaneInWorld</edgelabel>
         </childnode>
-        <childnode refid="36" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>m_comHullConstraint_xAxisOfPlaneInWorld</edgelabel>
           <edgelabel>m_comHullConstraint_yAxisOfPlaneInWorld</edgelabel>
         </childnode>
-        <childnode refid="37" relation="usage">
+        <childnode refid="35" relation="usage">
           <edgelabel>m_comHullConstraint</edgelabel>
         </childnode>
-        <childnode refid="44" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>jointsConfiguration</edgelabel>
           <edgelabel>jointsVelocity</edgelabel>
           <edgelabel>m_constraintMultipliers</edgelabel>
@@ -1666,37 +1660,37 @@
           <edgelabel>m_upperBoundMultipliers</edgelabel>
         </childnode>
       </node>
-      <node id="29">
+      <node id="27">
         <label>iDynTree::SpatialVector&lt; SpatialMotionVector &gt;</label>
         <link refid="classiDynTree_1_1SpatialVector"/>
-        <childnode refid="30" relation="template-instance">
+        <childnode refid="28" relation="template-instance">
           <edgelabel>&lt; SpatialMotionVector &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="30">
+      <node id="28">
         <label>iDynTree::SpatialVector</label>
         <link refid="classiDynTree_1_1SpatialVector"/>
-        <childnode refid="31" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>angularVec3</edgelabel>
           <edgelabel>linearVec3</edgelabel>
         </childnode>
       </node>
-      <node id="25">
+      <node id="23">
         <label>std::basic_string&lt; Char &gt;</label>
       </node>
-      <node id="11">
+      <node id="10">
         <label>std::map&lt; int, internal::kinematics::TransformConstraint &gt;</label>
-        <childnode refid="12" relation="usage">
+        <childnode refid="11" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="13" relation="template-instance">
+        <childnode refid="12" relation="template-instance">
           <edgelabel>&lt; int, internal::kinematics::TransformConstraint &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="22">
+      <node id="20">
         <label>Matrix3x3</label>
         <link refid="classiDynTree_1_1MatrixFixSize"/>
-        <childnode refid="23" relation="template-instance">
+        <childnode refid="21" relation="template-instance">
           <edgelabel>&lt; 3, 3 &gt;</edgelabel>
         </childnode>
       </node>
@@ -1707,16 +1701,10 @@
           <edgelabel>m_vertices</edgelabel>
         </childnode>
       </node>
-      <node id="17">
+      <node id="16">
         <label>std::unordered_map&lt; int, int &gt;</label>
-        <childnode refid="18" relation="template-instance">
+        <childnode refid="17" relation="template-instance">
           <edgelabel>&lt; int, int &gt;</edgelabel>
-        </childnode>
-      </node>
-      <node id="21">
-        <label>iDynTree::RotationRaw</label>
-        <link refid="classiDynTree_1_1RotationRaw"/>
-        <childnode refid="22" relation="public-inheritance">
         </childnode>
       </node>
       <node id="5">
@@ -1725,49 +1713,49 @@
         <childnode refid="6" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="31">
+      <node id="29">
         <label>iDynTree::SpatialMotionForceVectorT_traits&lt; DerivedSpatialVecT &gt;</label>
         <link refid="classiDynTree_1_1SpatialMotionForceVectorT__traits"/>
-        <childnode refid="32" relation="template-instance">
+        <childnode refid="30" relation="template-instance">
           <edgelabel>&lt; DerivedSpatialVecT &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>iDynTree::MatrixFixSize&lt; nRows, nCols &gt;</label>
         <link refid="classiDynTree_1_1MatrixFixSize"/>
       </node>
-      <node id="12">
+      <node id="11">
         <label>internal::kinematics::TransformConstraint</label>
         <link refid="classinternal_1_1kinematics_1_1TransformConstraint"/>
       </node>
-      <node id="37">
+      <node id="35">
         <label>iDynTree::ConvexHullProjectionConstraint</label>
         <link refid="classiDynTree_1_1ConvexHullProjectionConstraint"/>
-        <childnode refid="38" relation="usage">
+        <childnode refid="36" relation="usage">
           <edgelabel>A</edgelabel>
           <edgelabel>AtimesP</edgelabel>
         </childnode>
-        <childnode refid="39" relation="usage">
+        <childnode refid="37" relation="usage">
           <edgelabel>supportFrameIndices</edgelabel>
         </childnode>
-        <childnode refid="40" relation="usage">
+        <childnode refid="38" relation="usage">
           <edgelabel>P</edgelabel>
           <edgelabel>Pdirection</edgelabel>
         </childnode>
-        <childnode refid="41" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>projectedConvexHull</edgelabel>
         </childnode>
-        <childnode refid="43" relation="usage">
+        <childnode refid="41" relation="usage">
           <edgelabel>absoluteFrame_X_supportFrame</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>o</edgelabel>
         </childnode>
-        <childnode refid="44" relation="usage">
+        <childnode refid="42" relation="usage">
           <edgelabel>b</edgelabel>
         </childnode>
       </node>
-      <node id="15">
+      <node id="14">
         <label>iDynTree::KinDynComputations</label>
         <link refid="classiDynTree_1_1KinDynComputations"/>
       </node>
@@ -1776,81 +1764,81 @@
         <childnode refid="5" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; iDynTree::Position &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="28">
+      <node id="26">
         <label>iDynTree::SpatialMotionVector</label>
         <link refid="classiDynTree_1_1SpatialMotionVector"/>
-        <childnode refid="29" relation="public-inheritance">
+        <childnode refid="27" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="42">
+      <node id="40">
         <label>std::vector&lt; iDynTree::VectorFixSize &gt;</label>
-        <childnode refid="8" relation="usage">
+        <childnode refid="7" relation="usage">
           <edgelabel>elements</edgelabel>
         </childnode>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; iDynTree::VectorFixSize &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="41">
+      <node id="39">
         <label>iDynTree::Polygon2D</label>
         <link refid="classiDynTree_1_1Polygon2D"/>
-        <childnode refid="42" relation="usage">
+        <childnode refid="40" relation="usage">
           <edgelabel>m_vertices</edgelabel>
         </childnode>
       </node>
-      <node id="35">
+      <node id="33">
         <label>std::vector&lt; bool &gt;</label>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; bool &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="32">
+      <node id="30">
         <label>iDynTree::SpatialMotionForceVectorT_traits&lt; SpatialMotionForceVectorT &gt;</label>
         <link refid="classiDynTree_1_1SpatialMotionForceVectorT__traits"/>
       </node>
-      <node id="34">
+      <node id="32">
         <label>iDynTree::VectorFixSize&lt; 3 &gt;</label>
         <link refid="classiDynTree_1_1VectorFixSize"/>
-        <childnode refid="8" relation="template-instance">
+        <childnode refid="7" relation="template-instance">
           <edgelabel>&lt; 3 &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="33">
+      <node id="31">
         <label>std::vector&lt; std::pair&lt; double, double &gt; &gt;</label>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; std::pair&lt; double, double &gt; &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="39">
+      <node id="37">
         <label>std::vector&lt; int &gt;</label>
-        <childnode refid="9" relation="template-instance">
+        <childnode refid="8" relation="template-instance">
           <edgelabel>&lt; int &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="7">
+      <node id="6">
         <label>Vector3</label>
         <link refid="classiDynTree_1_1VectorFixSize"/>
-        <childnode refid="8" relation="template-instance">
+        <childnode refid="7" relation="template-instance">
           <edgelabel>&lt; 3 &gt;</edgelabel>
         </childnode>
       </node>
-      <node id="19">
+      <node id="18">
         <label>iDynTree::Transform</label>
         <link refid="classiDynTree_1_1Transform"/>
-        <childnode refid="20" relation="usage">
+        <childnode refid="19" relation="usage">
           <edgelabel>rot</edgelabel>
         </childnode>
         <childnode refid="5" relation="usage">
           <edgelabel>pos</edgelabel>
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>std::string</label>
-        <childnode refid="25" relation="public-inheritance">
+        <childnode refid="23" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
@@ -1893,7 +1881,7 @@
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1accffb6a1b2c7d84372b3816ef1fd6938" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_comHullConstraint_supportPolygons</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a0e1f2fa42cee1d5ee1c694db3e62c7b1" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_comHullConstraint_xAxisOfPlaneInWorld</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a4132256ebe3a580e7bb1eda9abf33ecb" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_comHullConstraint_yAxisOfPlaneInWorld</name></member>
-      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a8846e32c77f80603683f5afe35317759" prot="private" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_comTarget</name></member>
+      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1aba7b2e764e0951b43b16a62049496948" prot="private" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_comTarget</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a558eb1949d06bae51c90b897f50ab0c6" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_constraintMultipliers</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae37acd832ddc894dbcbf6e0a7b888139" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_constraints</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a12d5cf9bda5ea843e13d7e02b7657477" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_constrTol</name></member>
@@ -1912,11 +1900,11 @@
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1afd3c21e52af07cbe5eed2975f4ea1542" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_preferredJointsConfiguration</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ace62864b8c7c036cb75e6f3596f49273" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_preferredJointsWeight</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a60936bb71ca4e3ea53ca44e96fcceaeb" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_problemInitialized</name></member>
-      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a74b39d1c7ab83b3c7e65b7f4c944ae3b" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_reducedVariablesInfo</name></member>
+      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a596e5dd0d908f75ca67683f9e5bc349e" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_reducedVariablesInfo</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a4295e14928ac5b8c84ec92b56bfbdf51" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_rotationParametrization</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a2dca851484e008c10320a02d7d0cade9" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_solver</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a9014bd8584d52f9d12e5d46b3702f505" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_solverName</name></member>
-      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae5384d50c5f3648498eaffb119b8f7dc" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_state</name></member>
+      <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a800b27768852ee09b3d4f455db133f0d" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_state</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a7bedc79c4659da0b1fc90b082adaf1a8" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_targets</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a618a99cb734358131863f013698e6f51" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_tol</name></member>
       <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1aae45e2f08dd38410d10fd73430596b3a" prot="public" virt="non-virtual"><scope>internal::kinematics::InverseKinematicsData</scope><name>m_upperBoundMultipliers</name></member>

@@ -96,6 +96,13 @@
             </dt>
             <dd>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</dd>
             <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#ae25f91a29dc9b01ae310d5e1526fa273" class="m-doc">createReducedModel</a>(</span><span class="m-doc-wrap">const Model&amp; fullModel,
+              const std::vector&lt;std::string&gt;&amp; jointsInReducedModel,
+              Model&amp; reducedModel,
+              const std::unordered_map&lt;std::string, double&gt;&amp; removedJointPositions) -&gt; bool</span>
+            </dt>
+            <dd>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</dd>
+            <dt>
               <span class="m-doc-wrap-bumper">auto <a href="#aa6a9c44d5b80ede19b30f721f88d3679" class="m-doc">createModelWithNormalizedJointNumbering</a>(</span><span class="m-doc-wrap">const Model&amp; model,
               const std::string&amp; baseForNormalizedJointNumbering,
               Model&amp; reducedModel) -&gt; bool</span>
@@ -107,6 +114,22 @@
               <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputSubModel) -&gt; bool</span>
             </dt>
             <dd>Extract sub model from sub model traversal.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a43a3d5de5f629b00c5c7a607278a4f20" class="m-doc">addValidNamesToAllSolidShapes</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel) -&gt; bool</span>
+            </dt>
+            <dd>Add automatically generated names to all visual and collision solid shapes of the model.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a133a097cc3ef37982c00cdd729829118" class="m-doc">moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel) -&gt; bool</span>
+            </dt>
+            <dd><a href="classiDynTree_1_1Transform.html" class="m-doc">Transform</a> the input model in model that can be exported as URDF with the given base link.</dd>
+            <dt>
+              <span class="m-doc-wrap-bumper">auto <a href="#a9a8fd1db7c7bbfb060362056a4ec65ee" class="m-doc">removeAdditionalFramesFromModel</a>(</span><span class="m-doc-wrap">const Model&amp; modelWithAllAdditionalFrames,
+              Model&amp; modelWithOnlyAllowedAdditionalFrames,
+              const std::vector&lt;std::string&gt; allowedAdditionalFrames = std::vector&lt;std::string&gt;()) -&gt; bool</span>
+            </dt>
+            <dd>\function Remove all additional frames from the model, except a specified allowlist.</dd>
           </dl>
         </section>
         <section>
@@ -127,6 +150,16 @@
             </h3>
             <p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</p>
 <p>All other joints are be removed by lumping (i.e. fusing together) the inertia of the links that are connected by that joint, assuming the joint to be in &quot;rest&quot; position (i.e. zero for revolute or prismatic joints). The links eliminated with this process are be added back to the reduced model as &quot;frames&quot;, and are copied in the same way all the additional frames of the lumped links.</p>
+          </div></section>
+          <section class="m-doc-details" id="ae25f91a29dc9b01ae310d5e1526fa273"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#ae25f91a29dc9b01ae310d5e1526fa273" class="m-doc-self">createReducedModel</a>(</span><span class="m-doc-wrap">const Model&amp; fullModel,
+              const std::vector&lt;std::string&gt;&amp; jointsInReducedModel,
+              Model&amp; reducedModel,
+              const std::unordered_map&lt;std::string, double&gt;&amp; removedJointPositions)</span></span>
+            </h3>
+            <p>This function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and an ordered list of joints and returns a model with just the joint specified in the list, with that exact order.</p>
+<p>All other joints are be removed by lumping (i.e. fusing together) the inertia of the links that are connected by that joint, assuming the joint to be in &quot;rest&quot; position (i.e. zero for revolute or prismatic joints), or the position specified in the removedJointPositions if a given joint is specified in removedJointPositions</p>
           </div></section>
           <section class="m-doc-details" id="aa6a9c44d5b80ede19b30f721f88d3679"><div>
             <h3>
@@ -161,6 +194,55 @@
               </tfoot>
             </table>
 <p>This function creates a new <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> containing links and joints composing the subModelTraversal. The function takes in input a <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> and a <a href="classiDynTree_1_1Traversal.html" class="m-doc">iDynTree::<wbr />Traversal</a>. The new model will contain joints and links composing the subModelTraversal, with the same order. The FT sensor frames are added as additional frames.</p><aside class="m-note m-danger"><h4>Warning</h4><p>This function does not handle <a href="classiDynTree_1_1SensorsList.html" class="m-doc">SensorsList</a> contained inside the input model.</p></aside>
+          </div></section>
+          <section class="m-doc-details" id="a43a3d5de5f629b00c5c7a607278a4f20"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a43a3d5de5f629b00c5c7a607278a4f20" class="m-doc-self">addValidNamesToAllSolidShapes</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel)</span></span>
+            </h3>
+            <p>Add automatically generated names to all visual and collision solid shapes of the model.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error in creating the sub model.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function creates a new <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a> that is identical to the input one, but that sets a valid name for all the visual and collision solid shapes of the model.</p><p>For links that already have at least either collision or visual with valid name, <strong>all</strong> the corresponding shapes (collision or visual) will not be modified.</p><p>For links in which all shapes of a given type that do not have a valid name, a name will be generated as the following:</p><ul><li>If there is a single collision or visual element in the link, it will be named &lt;linkName&gt;_collision or &lt;linkName&gt;_visual</li><li>If there are multiple collision or visual elements in the link, the solid shapes will be &lt;linkName&gt;_collision_0, &lt;linkName&gt;_collision_1, ... &lt;linkName&gt;_collision_n or &lt;linkName&gt;_visual_0, &lt;linkName&gt;_visual_1, ... &lt;linkName&gt;_visual_n</li></ul>
+          </div></section>
+          <section class="m-doc-details" id="a133a097cc3ef37982c00cdd729829118"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a133a097cc3ef37982c00cdd729829118" class="m-doc-self">moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</a>(</span><span class="m-doc-wrap">const <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; inputModel,
+              <a href="classiDynTree_1_1Model.html" class="m-doc">iDynTree::<wbr />Model</a>&amp; outputModel)</span></span>
+            </h3>
+            <p><a href="classiDynTree_1_1Transform.html" class="m-doc">Transform</a> the input model in model that can be exported as URDF with the given base link.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error in creating the sub model.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>In iDynTree, the link frame can be placed without constraint w.r.t. to the joints to which the link is connected. On the other hand, in the URDF format, the origin of the frame of the child link connected to its parent with a non-fixed joint <strong>must</strong> lay on the axis of the joint.</p><p>That means that if you want to export a model with an arbitrary base link, some link frame will need to be moved to respect the constraint given by the URDF format. This function perform exactly this transformation, ensuring that inertia, visual and collision information is probably accounted for, and leaving the original link frames in the model as &quot;additional frames&quot; with the naming scheme &lt;linkName&gt;_original_frame .</p><p>Note that the operation done depends on the base link used, if you want to use a different base link, change the default base link of the model via inputModel.setDefaultBaseLink method.</p>
+          </div></section>
+          <section class="m-doc-details" id="a9a8fd1db7c7bbfb060362056a4ec65ee"><div>
+            <h3>
+              <span class="m-doc-wrap-bumper">bool </span><span class="m-doc-wrap"><span class="m-doc-wrap-bumper"><a href="#a9a8fd1db7c7bbfb060362056a4ec65ee" class="m-doc-self">removeAdditionalFramesFromModel</a>(</span><span class="m-doc-wrap">const Model&amp; modelWithAllAdditionalFrames,
+              Model&amp; modelWithOnlyAllowedAdditionalFrames,
+              const std::vector&lt;std::string&gt; allowedAdditionalFrames = std::vector&lt;std::string&gt;())</span></span>
+            </h3>
+            <p>\function Remove all additional frames from the model, except a specified allowlist.</p>
+            <table class="m-table m-fullwidth m-flat">
+              <tfoot>
+                <tr>
+                  <th style="width: 1%">Returns</th>
+                  <td>true if all went well, false if there was an error.</td>
+                </tr>
+              </tfoot>
+            </table>
+<p>This function takes in input a model, and return a model with all the additional frame list removed, except for the additional frames whose name is specified in the specified allowlist.</p><aside class="m-note m-info"><h4>Note</h4><p>The main use of this function is for processing models that need to be passed to other libraries or physics engines, where the additional frames may create problems or create performance problem. As long as you are using iDynTree, the presence of additional frames does not impact the performance of kinematics or dynamics algorithms, so there is no need to call this function to remove the additional frames.</p></aside>
           </div></section>
         </section>
       </div>
