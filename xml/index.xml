@@ -1000,6 +1000,9 @@
     <member refid="classiDynTree_1_1FixedJoint_1a11d92b8cc4f0df088f0eb972e9c70b63" kind="function"><name>getRestTransform</name></member>
     <member refid="classiDynTree_1_1FixedJoint_1a09dddd2e6d0fc043c6ffa0681b15404c" kind="function"><name>getTransform</name></member>
     <member refid="classiDynTree_1_1FixedJoint_1aac231749bf30745780aec0d876fd82ed" kind="function"><name>getTransformDerivative</name></member>
+    <member refid="classiDynTree_1_1FixedJoint_1aaf6686affee2d8829f158476232a69cc" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
+    <member refid="classiDynTree_1_1FixedJoint_1ac4380bc8eef72a886fd50718f90b2f67" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1FixedJoint_1aecdd18f426aa92457041c7ddf221f814" kind="function"><name>normalizeJointPosCoords</name></member>
     <member refid="classiDynTree_1_1FixedJoint_1aa103b6aee2a08ed32b7688f01e3c10fe" kind="function"><name>getMotionSubspaceVector</name></member>
     <member refid="classiDynTree_1_1FixedJoint_1a5b6ba1d1c8e77ba3a6b4e2c91078388c" kind="function"><name>computeChildPosVelAcc</name></member>
     <member refid="classiDynTree_1_1FixedJoint_1accd64e95d5df5c12cf0d15d71584cfd6" kind="function"><name>computeChildVelAcc</name></member>
@@ -1359,10 +1362,13 @@
     <member refid="classiDynTree_1_1IJoint_1ab82b3ad35b2de9b0ef8ab96b851213d3" kind="function"><name>setStaticFriction</name></member>
     <member refid="classiDynTree_1_1IJoint_1ac77c3cc0888a52342049ff5436ff532d" kind="function"><name>getDamping</name></member>
     <member refid="classiDynTree_1_1IJoint_1aa51240f3f2f74d9b9115ac679b013d6c" kind="function"><name>getStaticFriction</name></member>
+    <member refid="classiDynTree_1_1IJoint_1aadfed093b3e13c2da08668958d99167c" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1IJoint_1ad0d3771bd046afa8a19d0c3af18f577c" kind="function"><name>normalizeJointPosCoords</name></member>
     <member refid="classiDynTree_1_1IJoint_1ac989ee81d08959eca68666aa6740cb16" kind="function"><name>~IJoint</name></member>
     <member refid="classiDynTree_1_1IJoint_1a021ac00a8b2e9e519f930baad1bc1fa2" kind="function"><name>clone</name></member>
     <member refid="classiDynTree_1_1IJoint_1a149ddcf05f6328fdd3ecbe38a0fca4a0" kind="function"><name>getNrOfPosCoords</name></member>
     <member refid="classiDynTree_1_1IJoint_1a83027b41a495e097b8cf534059516440" kind="function"><name>getNrOfDOFs</name></member>
+    <member refid="classiDynTree_1_1IJoint_1ac712be0a8eb4b09eed3f9d8a42b4e765" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
   </compound>
   <compound refid="classiDynTree_1_1iKinLimbImported" kind="class"><name>iDynTree::iKinLimbImported</name>
     <member refid="classiDynTree_1_1iKinLimbImported_1a1ddb6cd3ab0129374cc29ddaa0820e84" kind="function"><name>iKinLimbImported</name></member>
@@ -1620,9 +1626,9 @@
   <compound refid="classinternal_1_1kinematics_1_1InverseKinematicsData" kind="class"><name>internal::kinematics::InverseKinematicsData</name>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1acbc9211347dfeee1bdc82e5140411f5e" kind="variable"><name>m_dynamics</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a87c413903a500a5319abde355740b446" kind="variable"><name>m_jointLimits</name></member>
-    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ad020ee1289099bede3a3c6fa9ab9eea3" kind="variable"><name>m_state</name></member>
+    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae5384d50c5f3648498eaffb119b8f7dc" kind="variable"><name>m_state</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae446a497e865ef158f32710de466ee65" kind="variable"><name>m_dofs</name></member>
-    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ad5a0f6758c7f1c183d22924db182cd7f" kind="variable"><name>m_reducedVariablesInfo</name></member>
+    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a74b39d1c7ab83b3c7e65b7f4c944ae3b" kind="variable"><name>m_reducedVariablesInfo</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a4295e14928ac5b8c84ec92b56bfbdf51" kind="variable"><name>m_rotationParametrization</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae37acd832ddc894dbcbf6e0a7b888139" kind="variable"><name>m_constraints</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a7bedc79c4659da0b1fc90b082adaf1a8" kind="variable"><name>m_targets</name></member>
@@ -1675,7 +1681,7 @@
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a6b5567abc4924be678b1dc3e56fe4701" kind="variable"><name>m_numberOfOptimisationConstraints</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a2dca851484e008c10320a02d7d0cade9" kind="variable"><name>m_solver</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1aad4430aa77416246314c5d41ee4988ff" kind="variable"><name>m_nlpProblem</name></member>
-    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a57b827800b8b37ff77dd299e5abd8eb8" kind="variable"><name>m_comTarget</name></member>
+    <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a8846e32c77f80603683f5afe35317759" kind="variable"><name>m_comTarget</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a70535b5bdc9907132c3b6b8719905845" kind="variable"><name>m_defaultTargetResolutionMode</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1a13f0d1cb435fbb091d7dc32a26cfd5ec" kind="function"><name>InverseKinematicsData</name></member>
     <member refid="classinternal_1_1kinematics_1_1InverseKinematicsData_1ae9db19904a0ce4eb1df0f46e8bfd1311" kind="function"><name>operator=</name></member>
@@ -2206,6 +2212,8 @@
     <member refid="classiDynTree_1_1LinkContactWrenches_1aa887236855b6912850f3cc6a62a78f9f" kind="function"><name>contactWrench</name></member>
     <member refid="classiDynTree_1_1LinkContactWrenches_1ae2bc12401d4305ad800bff6821a46ca5" kind="function"><name>contactWrench</name></member>
     <member refid="classiDynTree_1_1LinkContactWrenches_1af2fa68582633a61f84a0865baba0a22b" kind="function"><name>computeNetWrenches</name></member>
+    <member refid="classiDynTree_1_1LinkContactWrenches_1a8b3e615ff301768656e1cfeff42086e9" kind="function"><name>addNewContactForLink</name></member>
+    <member refid="classiDynTree_1_1LinkContactWrenches_1a960e471ad92a898163b91b8b01587b69" kind="function"><name>addNewContactInFrame</name></member>
     <member refid="classiDynTree_1_1LinkContactWrenches_1a4277c1b8738d1b6bdf5620bdf9d6d850" kind="function"><name>toString</name></member>
   </compound>
   <compound refid="classiDynTree_1_1LinkElement" kind="class"><name>iDynTree::LinkElement</name>
@@ -2545,6 +2553,9 @@
     <member refid="structiDynTree_1_1ModelExporterOptions_1a776c8f98ae5c58e038e3a1962f9fd318" kind="variable"><name>exportFirstBaseLinkAdditionalFrameAsFakeURDFBase</name></member>
     <member refid="structiDynTree_1_1ModelExporterOptions_1acc4e1f0ecb310fca1c6c632ff52cbf8a" kind="variable"><name>robotExportedName</name></member>
     <member refid="structiDynTree_1_1ModelExporterOptions_1a3f29164afc0150a7e4bb867bb4cd87ec" kind="variable"><name>xmlBlobs</name></member>
+    <member refid="structiDynTree_1_1ModelExporterOptions_1a17ae66ab30d56160af3d62f6ddf5afb3" kind="variable"><name>exportSphericalJointsAsThreeRevoluteJoints</name></member>
+    <member refid="structiDynTree_1_1ModelExporterOptions_1afeb5cf1d630be72c4890171893b8e2a1" kind="variable"><name>sphericalJointFakeLinkPrefix</name></member>
+    <member refid="structiDynTree_1_1ModelExporterOptions_1a6db5196cb4e5cdaa6a33b51bd837a195" kind="variable"><name>sphericalJointRevoluteJointPrefix</name></member>
     <member refid="structiDynTree_1_1ModelExporterOptions_1a5c7580ca273c3bc9c1311e9e4e5aff3c" kind="function"><name>ModelExporterOptions</name></member>
   </compound>
   <compound refid="classiDynTree_1_1ModelLoader" kind="class"><name>iDynTree::ModelLoader</name>
@@ -2557,8 +2568,11 @@
     <member refid="classiDynTree_1_1ModelLoader_1aa1d105cc4c13bc5c6fd90cc6f8224085" kind="function"><name>loadReducedModelFromFullModel</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1af8431aff629c8c73db87b549d7f804b1" kind="function"><name>loadReducedModelFromString</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1a15df3e0647d7de8fc286c37c2fdbd6d0" kind="function"><name>loadReducedModelFromFile</name></member>
+    <member refid="classiDynTree_1_1ModelLoader_1a66d2beec47e91120963d40a903957508" kind="function"><name>loadReducedModelFromFullModel</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1a8b32ce23af25ee6cd0a8f77bb95d752e" kind="function"><name>loadReducedModelFromFullModel</name></member>
+    <member refid="classiDynTree_1_1ModelLoader_1a4ca6e81c365497d725f7b71cccbbcf2a" kind="function"><name>loadReducedModelFromString</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1a1ea528a324efa1fc36dd0803148d37ac" kind="function"><name>loadReducedModelFromString</name></member>
+    <member refid="classiDynTree_1_1ModelLoader_1a32704478476b11824662d02e3cebb7b1" kind="function"><name>loadReducedModelFromFile</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1a5a8d8b9ebf6b22f4db8b580897d5b2ce" kind="function"><name>loadReducedModelFromFile</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1abfea0564c6c01dc8a90bab55df13b533" kind="function"><name>model</name></member>
     <member refid="classiDynTree_1_1ModelLoader_1a933ace452015e5dd1d0d229315aef980" kind="function"><name>sensors</name></member>
@@ -2568,6 +2582,10 @@
   <compound refid="structiDynTree_1_1ModelParserOptions" kind="struct"><name>iDynTree::ModelParserOptions</name>
     <member refid="structiDynTree_1_1ModelParserOptions_1acca6da96631f8577cc259f939872d156" kind="variable"><name>addSensorFramesAsAdditionalFrames</name></member>
     <member refid="structiDynTree_1_1ModelParserOptions_1a7bbd5bfdb0a83af64bcc10e955714bc4" kind="variable"><name>originalFilename</name></member>
+    <member refid="structiDynTree_1_1ModelParserOptions_1a2eaa5dc58dec6de63a8f118373805748" kind="variable"><name>convertThreeRevoluteJointsToSphericalJoint</name></member>
+    <member refid="structiDynTree_1_1ModelParserOptions_1a569936f1b79a9ddbb3d12054ac1cc6db" kind="variable"><name>sphericalJointZeroMassTolerance</name></member>
+    <member refid="structiDynTree_1_1ModelParserOptions_1a6e20df8e81e171e33fd5e8c6f8c128fe" kind="variable"><name>sphericalJointOrthogonalityTolerance</name></member>
+    <member refid="structiDynTree_1_1ModelParserOptions_1ac00ba8d90c5854aba0e1af25cf830584" kind="variable"><name>sphericalJointIntersectionTolerance</name></member>
     <member refid="structiDynTree_1_1ModelParserOptions_1aace65fc753b0bc44d5a88f8de61a0276" kind="function"><name>ModelParserOptions</name></member>
   </compound>
   <compound refid="classiDynTree_1_1ModelSolidShapes" kind="class"><name>iDynTree::ModelSolidShapes</name>
@@ -2936,6 +2954,9 @@
     <member refid="classiDynTree_1_1PrismaticJoint_1a373f69a06f669b0696732484469a0000" kind="function"><name>getRestTransform</name></member>
     <member refid="classiDynTree_1_1PrismaticJoint_1aa496c937ad1ca73bb90e7da79cc646b2" kind="function"><name>getTransform</name></member>
     <member refid="classiDynTree_1_1PrismaticJoint_1a0ce9b9cd049657c73cf6b1e2461210b9" kind="function"><name>getTransformDerivative</name></member>
+    <member refid="classiDynTree_1_1PrismaticJoint_1a693463b6624ee225bfafc0cd5e5484bf" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
+    <member refid="classiDynTree_1_1PrismaticJoint_1aeee5efe6fbcb2a9cab0bec5c3da1df50" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1PrismaticJoint_1a71bf599d7b26369f453ce48073c811a3" kind="function"><name>normalizeJointPosCoords</name></member>
     <member refid="classiDynTree_1_1PrismaticJoint_1a6e6fb431a49f7a0215f7d4b5faa3f9f9" kind="function"><name>getMotionSubspaceVector</name></member>
     <member refid="classiDynTree_1_1PrismaticJoint_1a254a889ad22326e340e31893aa3b3a17" kind="function"><name>computeChildPosVelAcc</name></member>
     <member refid="classiDynTree_1_1PrismaticJoint_1ab7ee688d192b918dfb9efbe8afda0f09" kind="function"><name>computeChildVel</name></member>
@@ -3030,6 +3051,9 @@
     <member refid="classiDynTree_1_1RevoluteJoint_1addfd7a524a8b455fed2e119e5337a5ef" kind="function"><name>getRestTransform</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1a4dd07d55b77a7b6063c4f677b9900499" kind="function"><name>getTransform</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1afb136bbf0c99f9bcf571dfe1d3937e18" kind="function"><name>getTransformDerivative</name></member>
+    <member refid="classiDynTree_1_1RevoluteJoint_1a43eb8eee53ab52b4f7c6477c1a873c90" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
+    <member refid="classiDynTree_1_1RevoluteJoint_1aabb880e56f74d38d32b786b7bf79a1a4" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1RevoluteJoint_1aae1d4156e453d820fd02c9131165bcb8" kind="function"><name>normalizeJointPosCoords</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1ab21df5f6c5075952811c700a9c5cd51a" kind="function"><name>getMotionSubspaceVector</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1a4e54ab1a66775c23d867d96bc4981d89" kind="function"><name>computeChildPosVelAcc</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1adaae229eae185031300bf171a513d181" kind="function"><name>computeChildVel</name></member>
@@ -3049,6 +3073,71 @@
     <member refid="classiDynTree_1_1RevoluteJoint_1a6e6f4824555ea71cc71834f60bc47130" kind="function"><name>getStaticFriction</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1a011fc7911d5e330ee4cbfcc380cd37b1" kind="function"><name>setDamping</name></member>
     <member refid="classiDynTree_1_1RevoluteJoint_1ad5d152ac28c6c35795f47ff496b924ad" kind="function"><name>setStaticFriction</name></member>
+  </compound>
+  <compound refid="classiDynTree_1_1RevoluteSO2Joint" kind="class"><name>iDynTree::RevoluteSO2Joint</name>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a929188a3f121406bcaf363e523497f4a" kind="variable"><name>link1</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ad81dabbd36230d6ce324cdd6e265bd1d" kind="variable"><name>link2</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1abe826baf7ec4b2d57080d89fadc95b0a" kind="variable"><name>link1_X_link2_at_rest</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1acd77ca591d1c854a29bef08d2f7811b7" kind="variable"><name>rotation_axis_wrt_link1</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa904847c16900d44d055d130ea512f29" kind="variable"><name>m_hasPosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a227f9449025a1b30c52f5a134d22846d" kind="variable"><name>m_minPos</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a930974c853d285da18be68c96e4607dc" kind="variable"><name>m_maxPos</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a966d965152752ea1984c39063f2a9c65" kind="variable"><name>m_joint_dynamics_type</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1af2e7eebc73ee65b987a55ce70c9926f8" kind="variable"><name>m_damping</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a9df73990494e5211953cd96a0f4bb241" kind="variable"><name>m_static_friction</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a34ee4020ba524a3ff9074cb7617dc993" kind="variable"><name>q_real_previous</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a01f4f644c37ac252f42c833fbfbf7f83" kind="variable"><name>q_imag_previous</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a516770d3a3d302e38c6846af5708e336" kind="variable"><name>link1_X_link2</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a0d81835781978e6d994feda2a02a87db" kind="variable"><name>link2_X_link1</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a5518330f47b3922d38c636ee16f38c79" kind="variable"><name>S_link1_link2</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a84ab9b046137b380aac91bae4372047b" kind="variable"><name>S_link2_link1</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ae42e6efcb11b5dac6ac6f4e6ed4f28ce" kind="function"><name>disablePosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a77d53e2b990e68c3049fc8f79c181c95" kind="function"><name>resetJointDynamics</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a4619faf8d34cc078f93c878d3778539e" kind="function"><name>updateBuffers</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a1875ed6790cdef1f36e32c900df61629" kind="function"><name>resetBuffers</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa0c274c5663226894b92e15210d57c90" kind="function"><name>resetAxisBuffers</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa9018cd5dfe867479fa0b499e199e3ce" kind="function"><name>complexToAngle</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a0446eca7eb2cf2889d0e9d33fdf8ea92" kind="function"><name>normalizeComplex</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a4ba706f7101bb9519c017d60ef197cc6" kind="function"><name>RevoluteSO2Joint</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a78de953da11421752e970ae2413d66fd" kind="function"><name>RevoluteSO2Joint</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1abf579399e9be8d947cbbb9d943af170c" kind="function"><name>RevoluteSO2Joint</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a4b889cdfe463ddeaf592a1180bee6c30" kind="function"><name>RevoluteSO2Joint</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ae1dda38c084ce44dab4f34adfbedebc3" kind="function"><name>~RevoluteSO2Joint</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ac856b07ede5b2564e40ecac096523f9b" kind="function"><name>clone</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a122f1f85c605901a5318a76aaf289748" kind="function"><name>setAttachedLinks</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a196fa4d502b2ac42d6f9c82ded440ea3" kind="function"><name>setRestTransform</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a1f3dffede2dac2a813cac411672d8094" kind="function"><name>setAxis</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a97c05340151c4b146e2a3ac68113927b" kind="function"><name>setAxis</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a13f96e3e7bc95a7b359129655f98ce2a" kind="function"><name>getFirstAttachedLink</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a72d100d095cba9b89bdd07bca658844e" kind="function"><name>getSecondAttachedLink</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aae0db8853ff73a95a698dbb40530b9b8" kind="function"><name>getAxis</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a224463a0361a5235514b086852b7aa44" kind="function"><name>getRestTransform</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa0d3075ce2f95469788fb800245b5cc4" kind="function"><name>getTransform</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa6f5e906a6e1aaa3804eeba352739eff" kind="function"><name>getTransformDerivative</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ade8d5d9ccdf88c2535ab4fb3ffeaf8ad" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a59bc8483ae663a73a5a16ca264f96947" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a03b2ac0d01cb2e379de41ac7c4b00d5d" kind="function"><name>normalizeJointPosCoords</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ac584f28ed13ea82c41259a6274179542" kind="function"><name>getMotionSubspaceVector</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1abc5c0b51ef499047b35ff82f8abb74d9" kind="function"><name>computeChildPosVelAcc</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa5d610e35d733f1e78aa391549b4a011" kind="function"><name>computeChildVel</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a942b5515b7d22f2edda6652d13b29495" kind="function"><name>computeChildVelAcc</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a85239f035f3ee881c934b005b8cc0d27" kind="function"><name>computeChildAcc</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a4358696e4544681a9e64a9aa5e1a4407" kind="function"><name>computeChildBiasAcc</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1adf0bdbce9899492ecafbf6908f559d5b" kind="function"><name>computeJointTorque</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ab2135a84df31194ac40ba6d17c8be9f8" kind="function"><name>hasPosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a90a0234d37aecec4ce9d7983b57f76e9" kind="function"><name>enablePosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1af2d10c6be8bbbd511eef50f4f2a79e4f" kind="function"><name>getPosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a6f6114dd2b5cc16e0e62418e5725a5ae" kind="function"><name>getMinPosLimit</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a628c4e716a0e3dcfd3cead7d294606c3" kind="function"><name>getMaxPosLimit</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1aa2e6df8a09741711d9b31b44b9af936b" kind="function"><name>setPosLimits</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a9f155972061a91f4257429d6a64d18ab" kind="function"><name>getJointDynamicsType</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1abd788ccac43320ed1852d6e666145dae" kind="function"><name>setJointDynamicsType</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ad3d6449d48139968ecb58eb201307110" kind="function"><name>getDamping</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1ab26273fcdf73f0c7d45623b26db8f0f8" kind="function"><name>getStaticFriction</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a981610f60f6d4224e0f9bc5fc31ff789" kind="function"><name>setDamping</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a290bfe30846ec3eecfa21e00730430d2" kind="function"><name>setStaticFriction</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a47b578894ef007fcd14a6141c1b9b78b" kind="function"><name>getCurrentAngle</name></member>
+    <member refid="classiDynTree_1_1RevoluteSO2Joint_1a0c8040427a9296d4ada258c6c6916a6d" kind="function"><name>setJointPositionFromAngle</name></member>
   </compound>
   <compound refid="classiDynTree_1_1RigidBodyInertiaNonLinearParametrization" kind="class"><name>iDynTree::RigidBodyInertiaNonLinearParametrization</name>
     <member refid="classiDynTree_1_1RigidBodyInertiaNonLinearParametrization_1ae323ec7fbb184a0d7744fa37adb427c5" kind="variable"><name>mass</name></member>
@@ -3688,6 +3777,57 @@
     <member refid="classiDynTree_1_1Sphere_1a93470b75fe93a3066be33307aaf7d918" kind="function"><name>getRadius</name></member>
     <member refid="classiDynTree_1_1Sphere_1a9b7ad07891cd9b85fb3648b05b97e63b" kind="function"><name>setRadius</name></member>
   </compound>
+  <compound refid="classiDynTree_1_1SphericalJoint" kind="class"><name>iDynTree::SphericalJoint</name>
+    <member refid="classiDynTree_1_1SphericalJoint_1a0ce75c983a521ef1977e0498fd84fa7a" kind="variable"><name>link1</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a5053768175c86ba160071f5c48b3e239" kind="variable"><name>link2</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a9acba9ba438107516ab10118be67c401" kind="variable"><name>link1_X_link2_at_rest</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a7626067f0829e1d9c8ae3af435dff8b8" kind="variable"><name>m_center_wrt_link1</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a949c4863e2d75d1d309d4a70ce22d6ed" kind="variable"><name>q_previous</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a48261dc22a116aba5dc76b8c20457808" kind="variable"><name>link1_X_link2</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a1f92e40bcd4922fa69fa9251526c0d92" kind="variable"><name>link2_X_link1</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ae58c2b653cc605bc210c213bf4021ea6" kind="variable"><name>S_link1_link2</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a825400c4ee32a58445eae550ec105435" kind="variable"><name>S_link2_link1</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a06313e044c5ed4a8e0da1e1c8ebb91ed" kind="function"><name>updateBuffers</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1adb9adf2f0d3ab5b3e269e209520ea643" kind="function"><name>resetBuffers</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ad382febaee7aab75182487e3e7c367e0" kind="function"><name>resetAxisBuffers</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a1f932911587cba3201064eae99787c71" kind="function"><name>normalizeQuaternion</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ae4840e6a75c08dada7fad9f193068c64" kind="function"><name>SphericalJoint</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a74517ac3c83476b2fe07c38e775b6ef2" kind="function"><name>SphericalJoint</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a40db5b94cc1e6103fe1d21eb881b7219" kind="function"><name>SphericalJoint</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a166ed2bc01fabd47daeb8c032f4b9f44" kind="function"><name>~SphericalJoint</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ad4223aca4cfa8492b50b24449a45de03" kind="function"><name>clone</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ab78cf32b9be287a67b1db72951259f7d" kind="function"><name>setAttachedLinks</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1adcbe0e09dd56be8fab15ebcfa5d96888" kind="function"><name>setRestTransform</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a20fff9ddd8df8f243cc3cde64152dc3c" kind="function"><name>getFirstAttachedLink</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a86b866a94a73033fce6f1118526196f8" kind="function"><name>getSecondAttachedLink</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ab70d106f4802464e0a39949c3be328a6" kind="function"><name>getRestTransform</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ad3b89c9e25a876c197053e68fa9e7ada" kind="function"><name>getTransform</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a48823c4c84871c42567165600bef710c" kind="function"><name>getTransformDerivative</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ac826a020da936cf288682cb6798026c5" kind="function"><name>getMotionSubspaceVector</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a6a2ad355eb68a3ba9c5e3abbfbb9ddf5" kind="function"><name>computeChildPosVelAcc</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a73a14825d62e9b88df41a1bf7736591a" kind="function"><name>computeChildVel</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a5238aa880f1805f981e1de5e343913cc" kind="function"><name>computeChildVelAcc</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ac25d78a707e10e17321c1bf99406911a" kind="function"><name>computeChildAcc</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a130ee52253aa1a415668951eb3c4a757" kind="function"><name>computeChildBiasAcc</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1aa20cf53d939a9d8db30e4419344ec993" kind="function"><name>computeJointTorque</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ae2ca9d6846ed46244a232c1707746099" kind="function"><name>hasPosLimits</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ac63625c756f5e78063424c0d60dbda8b" kind="function"><name>enablePosLimits</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1add97d0d292274cc456afa2671bdcc655" kind="function"><name>getPosLimits</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ae9bda342e5dc9542b21b432437dfe332" kind="function"><name>getMinPosLimit</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1aca0b0fe6594d72170b0dac1d15dc1a2b" kind="function"><name>getMaxPosLimit</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a396ea876b931d17dc8e03949bce6625a" kind="function"><name>setPosLimits</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a50059b12e9d0d87712991aedb2ae08a0" kind="function"><name>getJointDynamicsType</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a61576a14d6c6ab81e0762d6e78851ad7" kind="function"><name>setJointDynamicsType</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1abf6c4559224cd3de3b1e6c779a3dafb8" kind="function"><name>setDamping</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a82f964b4aefa299b60aa4b558160eff4" kind="function"><name>setStaticFriction</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a28c5e9d8f2200f6bedb0de12b2b04606" kind="function"><name>getDamping</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ab7a434b4d6a0d05858478de55ad11bb4" kind="function"><name>getStaticFriction</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1a036281e499435c35f6337648800a1a46" kind="function"><name>getPositionDerivativeVelocityJacobian</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1aa9a555e5f26050cd375a42da96c53e39" kind="function"><name>setJointPosCoordsToRest</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ac76b9ec07a437154076270a5101d3570" kind="function"><name>normalizeJointPosCoords</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1aa07ece34d86d5988f9ef060163f0ce5b" kind="function"><name>setJointCenter</name></member>
+    <member refid="classiDynTree_1_1SphericalJoint_1ac470edb00c2106bf4f0a7211e871ac22" kind="function"><name>getJointCenter</name></member>
+  </compound>
   <compound refid="structstate" kind="struct"><name>state</name>
   </compound>
   <compound refid="classiDynTree_1_1Span_1_1storage__type" kind="class"><name>iDynTree::Span::storage_type</name>
@@ -3883,6 +4023,7 @@
     <member refid="classiDynTree_1_1TransformDerivative_1adf92c041cf5c91f7a56ddac14a9f30bc" kind="function"><name>TransformDerivative</name></member>
     <member refid="classiDynTree_1_1TransformDerivative_1a86d92c6237183c73b300a3d748eda395" kind="function"><name>TransformDerivative</name></member>
     <member refid="classiDynTree_1_1TransformDerivative_1a9ce3f86db8990c49d8dd2c68db4a68f2" kind="function"><name>TransformDerivative</name></member>
+    <member refid="classiDynTree_1_1TransformDerivative_1a5b4091784bd95e9e6acc7122fd77f906" kind="function"><name>fromHomogeneousTransformDerivative</name></member>
     <member refid="classiDynTree_1_1TransformDerivative_1aa7c10eaa9a3898fc9fb67fe6c8188e0e" kind="function"><name>~TransformDerivative</name></member>
     <member refid="classiDynTree_1_1TransformDerivative_1a7e62b9e5318fda029f0bb1d14ae766fb" kind="function"><name>getRotationDerivative</name></member>
     <member refid="classiDynTree_1_1TransformDerivative_1a156f7b6ec1df03a6bdc3344e41aee40c" kind="function"><name>getPositionDerivative</name></member>
@@ -4006,7 +4147,7 @@
   <compound refid="classiDynTree_1_1URDFDocument" kind="class"><name>iDynTree::URDFDocument</name>
     <member refid="classiDynTree_1_1URDFDocument_1a02d7c7d35dce069c5665f177896f6a60" kind="variable"><name>m_model</name></member>
     <member refid="classiDynTree_1_1URDFDocument_1a549f3e8d21c8ac65721bc9b49c1b1f51" kind="variable"><name>m_options</name></member>
-    <member refid="classiDynTree_1_1URDFDocument_1a3a5265471f7ef8f2af0013a04eac2acf" kind="variable"><name>m_buffers</name></member>
+    <member refid="classiDynTree_1_1URDFDocument_1a391509911f58db3563dbc1a45a4f541b" kind="variable"><name>m_buffers</name></member>
     <member refid="classiDynTree_1_1URDFDocument_1aeee45e879a758d6074a9c58390ff3a15" kind="variable"><name>sensorHelpers</name></member>
     <member refid="classiDynTree_1_1URDFDocument_1a94c9fb5372fff427e6eefa501fa9d2a8" kind="variable"><name>joints</name></member>
     <member refid="classiDynTree_1_1URDFDocument_1af869c50633a0784f6452ed0e6a5ed176" kind="variable"><name>fixedJoints</name></member>
@@ -4264,6 +4405,33 @@
   <compound refid="namespaceiCub_1_1iKin" kind="namespace"><name>iCub::iKin</name>
   </compound>
   <compound refid="namespaceiDynTree" kind="namespace"><name>iDynTree</name>
+    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375a" kind="enum"><name>FrameVelocityRepresentation</name></member>
+    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aaf9e6abb240a3f5f6f3eb386c21277eeb" kind="enumvalue"><name>INERTIAL_FIXED_REPRESENTATION</name></member>
+    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aad3aa0f715d4709ae83c826d14ffb1dad" kind="enumvalue"><name>BODY_FIXED_REPRESENTATION</name></member>
+    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aacfd8cfdeac3248d26f145bd0998f93b8" kind="enumvalue"><name>MIXED_REPRESENTATION</name></member>
+    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515" kind="enum"><name>JointDynamicsType</name></member>
+    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515a20857d4b69f0d31ae45d631abb786fdb" kind="enumvalue"><name>NoJointDynamics</name></member>
+    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515a64acee9e0dd4fc665bab44e12c10917a" kind="enumvalue"><name>URDFJointDynamics</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7" kind="enum"><name>JointTypes</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a3c08d0d44f61d98e21ccb9ec424423d9" kind="enumvalue"><name>JOINT_FIXED</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a89707c27d3a57aa643323ca0666902dc" kind="enumvalue"><name>JOINT_REVOLUTE</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7ab384e38147a05edd9a4064e45bee473e" kind="enumvalue"><name>JOINT_PRISMATIC</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a359e4c290649bb8c74b43d86489a98fc" kind="enumvalue"><name>JOINT_REVOLUTE_SO2</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a9ebdbd2c8b1e85a49b05781cc821f088" kind="enumvalue"><name>JOINT_SPHERICAL</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9" kind="enum"><name>SensorType</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a7006069f3fbbdb2dfdd42a73646eb0c2" kind="enumvalue"><name>SIX_AXIS_FORCE_TORQUE</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9acaffc97afec9d7a74f00e940a440e27c" kind="enumvalue"><name>ACCELEROMETER</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9af18877b600b6d3bb9828709115fc0f7d" kind="enumvalue"><name>GYROSCOPE</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a442e40fb46ceb1796cb5d6b7d7e7e167" kind="enumvalue"><name>THREE_AXIS_ANGULAR_ACCELEROMETER</name></member>
+    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a92de2e46732f84e720c99cd5a3588190" kind="enumvalue"><name>THREE_AXIS_FORCE_TORQUE_CONTACT</name></member>
+    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6c" kind="enum"><name>InverseKinematicsRotationParametrization</name></member>
+    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6ca6bbd58481084418979b449c46aff99a8" kind="enumvalue"><name>InverseKinematicsRotationParametrizationQuaternion</name></member>
+    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6caad8ec2efa81330efbf416e7550113ca5" kind="enumvalue"><name>InverseKinematicsRotationParametrizationRollPitchYaw</name></member>
+    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2" kind="enum"><name>InverseKinematicsTreatTargetAsConstraint</name></member>
+    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2aa3f7c6e0138052de9bc8a0d3dcd9d712" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintNone</name></member>
+    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2a786b8aeaff64c77f025cec462c47206b" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintPositionOnly</name></member>
+    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2aad1cbbc20ef9d02ff21364a90f781681" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintRotationOnly</name></member>
+    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2a90e54d63819ec0bff0f8eec68beff50b" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintFull</name></member>
     <member refid="Utils_8h_1a1d9848852f7effdff0a7206e361759dc" kind="enum"><name>MatrixStorageOrdering</name></member>
     <member refid="Utils_8h_1a1d9848852f7effdff0a7206e361759dca2b26025c525aa73dc7d5a8ab6b75c277" kind="enumvalue"><name>RowMajor</name></member>
     <member refid="Utils_8h_1a1d9848852f7effdff0a7206e361759dcaa2d6963e41f11651763298147696f0dc" kind="enumvalue"><name>ColumnMajor</name></member>
@@ -4273,17 +4441,6 @@
     <member refid="ModelTransformersSolidShapes_8h_1a406a37da4e2a7b314679f42210e17496af8627c06e14c7be7e55266f664e41df1" kind="enumvalue"><name>VisualShapes</name></member>
     <member refid="ModelTransformersSolidShapes_8h_1a406a37da4e2a7b314679f42210e17496a36b6a35779ae883db4d5eae25858bc62" kind="enumvalue"><name>CollisionShapes</name></member>
     <member refid="ModelTransformersSolidShapes_8h_1a406a37da4e2a7b314679f42210e17496a1a96a1824b9b2103e329a71d173cabbf" kind="enumvalue"><name>BothShapes</name></member>
-    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6c" kind="enum"><name>InverseKinematicsRotationParametrization</name></member>
-    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6ca6bbd58481084418979b449c46aff99a8" kind="enumvalue"><name>InverseKinematicsRotationParametrizationQuaternion</name></member>
-    <member refid="InverseKinematics_8h_1a04da5add9479687cf4c7eb873e717c6caad8ec2efa81330efbf416e7550113ca5" kind="enumvalue"><name>InverseKinematicsRotationParametrizationRollPitchYaw</name></member>
-    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2" kind="enum"><name>InverseKinematicsTreatTargetAsConstraint</name></member>
-    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2aa3f7c6e0138052de9bc8a0d3dcd9d712" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintNone</name></member>
-    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2a786b8aeaff64c77f025cec462c47206b" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintPositionOnly</name></member>
-    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2aad1cbbc20ef9d02ff21364a90f781681" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintRotationOnly</name></member>
-    <member refid="InverseKinematics_8h_1a5cb905194c9ee61c0a23b32d603b2df2a90e54d63819ec0bff0f8eec68beff50b" kind="enumvalue"><name>InverseKinematicsTreatTargetAsConstraintFull</name></member>
-    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515a" kind="enum"><name>LightType</name></member>
-    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515aa7552ee08212d810760cfcca2c9e26976" kind="enumvalue"><name>POINT_LIGHT</name></member>
-    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515aac19ca7f555771da916a01ed3fa781d21" kind="enumvalue"><name>DIRECTIONAL_LIGHT</name></member>
     <member refid="group__iDynTreeExperimental_1ga62aff3167b9df327b4b1db6affadd21f" kind="enum"><name>BerdyVariants</name></member>
     <member refid="group__iDynTreeExperimental_1gga62aff3167b9df327b4b1db6affadd21faf59c4a22cd72d6e001dbba40910e9c32" kind="enumvalue"><name>ORIGINAL_BERDY_FIXED_BASE</name></member>
     <member refid="group__iDynTreeExperimental_1gga62aff3167b9df327b4b1db6affadd21fa1ca580068ec7f491800abeadf68185e5" kind="enumvalue"><name>BERDY_FLOATING_BASE</name></member>
@@ -4316,19 +4473,32 @@
     <member refid="ExternalWrenchesEstimation_8h_1a3af0bfcd7989e409b610847e3b397b26aeb51903155017085b84cc6aac2e2bba6" kind="enumvalue"><name>PURE_FORCE</name></member>
     <member refid="ExternalWrenchesEstimation_8h_1a3af0bfcd7989e409b610847e3b397b26a7e0e568e396d7cd82bf2fa23ca525a3a" kind="enumvalue"><name>PURE_FORCE_WITH_KNOWN_DIRECTION</name></member>
     <member refid="ExternalWrenchesEstimation_8h_1a3af0bfcd7989e409b610847e3b397b26a40b36711643e2573ff0f03773c0555e2" kind="enumvalue"><name>NO_UNKNOWNS</name></member>
-    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375a" kind="enum"><name>FrameVelocityRepresentation</name></member>
-    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aaf9e6abb240a3f5f6f3eb386c21277eeb" kind="enumvalue"><name>INERTIAL_FIXED_REPRESENTATION</name></member>
-    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aad3aa0f715d4709ae83c826d14ffb1dad" kind="enumvalue"><name>BODY_FIXED_REPRESENTATION</name></member>
-    <member refid="FreeFloatingMatrices_8h_1a0089c6dac34bc6a4f623d9e9e565375aacfd8cfdeac3248d26f145bd0998f93b8" kind="enumvalue"><name>MIXED_REPRESENTATION</name></member>
-    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515" kind="enum"><name>JointDynamicsType</name></member>
-    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515a20857d4b69f0d31ae45d631abb786fdb" kind="enumvalue"><name>NoJointDynamics</name></member>
-    <member refid="IJoint_8h_1aaf7a7f242cce355fb311a53b2df40515a64acee9e0dd4fc665bab44e12c10917a" kind="enumvalue"><name>URDFJointDynamics</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9" kind="enum"><name>SensorType</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a7006069f3fbbdb2dfdd42a73646eb0c2" kind="enumvalue"><name>SIX_AXIS_FORCE_TORQUE</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9acaffc97afec9d7a74f00e940a440e27c" kind="enumvalue"><name>ACCELEROMETER</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9af18877b600b6d3bb9828709115fc0f7d" kind="enumvalue"><name>GYROSCOPE</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a442e40fb46ceb1796cb5d6b7d7e7e167" kind="enumvalue"><name>THREE_AXIS_ANGULAR_ACCELEROMETER</name></member>
-    <member refid="Sensors_8h_1ad291b88efdf5262d744d33f642daf8b9a92de2e46732f84e720c99cd5a3588190" kind="enumvalue"><name>THREE_AXIS_FORCE_TORQUE_CONTACT</name></member>
+    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515a" kind="enum"><name>LightType</name></member>
+    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515aa7552ee08212d810760cfcca2c9e26976" kind="enumvalue"><name>POINT_LIGHT</name></member>
+    <member refid="Visualizer_8h_1aad6844bb3e20ca63bfe9e3ee6e26515aac19ca7f555771da916a01ed3fa781d21" kind="enumvalue"><name>DIRECTIONAL_LIGHT</name></member>
+    <member refid="AccelerometerSensor_8h_1ae032ae81e0b23b33446033eefb13e629" kind="typedef"><name>LinAcceleration</name></member>
+    <member refid="GyroscopeSensor_8h_1a303a7b672a9817d74c5a6279fbfe5e34" kind="typedef"><name>AngVelocity</name></member>
+    <member refid="IJoint_8h_1ade0c4658492d5288102a323d704a2a1c" kind="typedef"><name>IJointPtr</name></member>
+    <member refid="IJoint_8h_1ac8fef24361e5d31b7bb1c5e468ea9513" kind="typedef"><name>IJointConstPtr</name></member>
+    <member refid="Indices_8h_1a7b1bbb834d5bf0d3c64cdf91ab3d6e72" kind="typedef"><name>LinkIndex</name></member>
+    <member refid="Indices_8h_1a52bed44082992c37ef913adaa76e6c3c" kind="typedef"><name>JointIndex</name></member>
+    <member refid="Indices_8h_1ae732811edba33ac282fd0834dc0bdfd5" kind="typedef"><name>DOFIndex</name></member>
+    <member refid="Indices_8h_1aa29f3a0bcb161b96b72e593c2bdf0419" kind="typedef"><name>FrameIndex</name></member>
+    <member refid="Indices_8h_1a5d98b515bfdfd0764e5dc7c27e65de23" kind="typedef"><name>TraversalIndex</name></member>
+    <member refid="Link_8h_1a39bc17f697110e44c09c2e6e1aa7fa57" kind="typedef"><name>LinkPtr</name></member>
+    <member refid="Link_8h_1a34779dc4741f85944c0e2f736dc7def2" kind="typedef"><name>LinkConstPtr</name></member>
+    <member refid="LinkState_8h_1ac93f1a5870ffbdb40436a8ab17b4df5a" kind="typedef"><name>LinkNetExternalWrenches</name></member>
+    <member refid="LinkState_8h_1ab0304c1c94e9d9f0bbd646fceaad6e40" kind="typedef"><name>LinkInternalWrenches</name></member>
+    <member refid="LinkState_8h_1a8467b5079b622cd683df2fcdfd16b07c" kind="typedef"><name>LinkNetTotalWrenchesWithoutGravity</name></member>
+    <member refid="LinkState_8h_1a4eebfd4c3b5feb2154a1de101578fb4a" kind="typedef"><name>LinkCompositeRigidBodyInertias</name></member>
+    <member refid="LinkState_8h_1a104b2ec0864d4c37b58b808b43630171" kind="typedef"><name>LinkProperAccArray</name></member>
+    <member refid="MovableJointImpl_8h_1ac4ab72af9658e6e1503c06a97786db7f" kind="typedef"><name>MovableJointImpl1</name></member>
+    <member refid="MovableJointImpl_8h_1affe41311e5312f2897d5df6532e81143" kind="typedef"><name>MovableJointImpl21</name></member>
+    <member refid="MovableJointImpl_8h_1a24b411fa2a181857fd60881b7a1fa644" kind="typedef"><name>MovableJointImpl2</name></member>
+    <member refid="MovableJointImpl_8h_1ae4671e7929209092bc1d6a72f460872a" kind="typedef"><name>MovableJointImpl3</name></member>
+    <member refid="MovableJointImpl_8h_1a66158274373829ef7c8694995a9d6929" kind="typedef"><name>MovableJointImpl4</name></member>
+    <member refid="MovableJointImpl_8h_1a5b8dfe13ce097fa3e505f492b7906c63" kind="typedef"><name>MovableJointImpl5</name></member>
+    <member refid="MovableJointImpl_8h_1af1c9c077a2177994db5ee45257af1d48" kind="typedef"><name>MovableJointImpl6</name></member>
     <member refid="EigenHelpers_8h_1acad81b92d9885b5eec826b3066af8960" kind="typedef"><name>iDynTreeEigenVector</name></member>
     <member refid="EigenHelpers_8h_1a60faf8b72189d4496f7b7920d5ea3b01" kind="typedef"><name>iDynTreeEigenConstVector</name></member>
     <member refid="EigenHelpers_8h_1a8dd9b043a4e3ceaa1b9a173e826020aa" kind="typedef"><name>iDynTreeEigenMatrix</name></member>
@@ -4337,9 +4507,7 @@
     <member refid="EigenHelpers_8h_1a2b2522205c120424f4e8740b30bad6aa" kind="typedef"><name>iDynTreeEigenConstMatrixMap</name></member>
     <member refid="GeomVector3_8h_1ad00786c331484214ec14e850f805602f" kind="typedef"><name>LinearMotionVector3</name></member>
     <member refid="GeomVector3_8h_1a408c1ac9b6f50b7425becd9b7b20f351" kind="typedef"><name>LinVelocity</name></member>
-    <member refid="GeomVector3_8h_1ae032ae81e0b23b33446033eefb13e629" kind="typedef"><name>LinAcceleration</name></member>
     <member refid="GeomVector3_8h_1aff2ac4b45bb6926622fcfbf47dbe82b1" kind="typedef"><name>AngularMotionVector3</name></member>
-    <member refid="GeomVector3_8h_1a303a7b672a9817d74c5a6279fbfe5e34" kind="typedef"><name>AngVelocity</name></member>
     <member refid="GeomVector3_8h_1adb7dac766ffa576a0213970d650eda15" kind="typedef"><name>AngAcceleration</name></member>
     <member refid="GeomVector3_8h_1a220a484dfbd1e54951ef1aaf24ecd80c" kind="typedef"><name>LinearForceVector3</name></member>
     <member refid="GeomVector3_8h_1ac0ebd34fab318a785581c07d73cdffc4" kind="typedef"><name>LinMomentum</name></member>
@@ -4367,32 +4535,6 @@
     <member refid="AttitudeEstimator_8h_1ad170eb4fd0bd13bfb0bdbdb6460d28bc" kind="typedef"><name>MagnetometerMeasurements</name></member>
     <member refid="AttitudeEstimator_8h_1a8953e202971beb38867767ab9f002c42" kind="typedef"><name>UnitQuaternion</name></member>
     <member refid="AttitudeEstimator_8h_1a48e2955e462d28103d57a10634d0654d" kind="typedef"><name>RPY</name></member>
-    <member refid="IJoint_8h_1ade0c4658492d5288102a323d704a2a1c" kind="typedef"><name>IJointPtr</name></member>
-    <member refid="IJoint_8h_1ac8fef24361e5d31b7bb1c5e468ea9513" kind="typedef"><name>IJointConstPtr</name></member>
-    <member refid="Indices_8h_1a7b1bbb834d5bf0d3c64cdf91ab3d6e72" kind="typedef"><name>LinkIndex</name></member>
-    <member refid="Indices_8h_1a52bed44082992c37ef913adaa76e6c3c" kind="typedef"><name>JointIndex</name></member>
-    <member refid="Indices_8h_1ae732811edba33ac282fd0834dc0bdfd5" kind="typedef"><name>DOFIndex</name></member>
-    <member refid="Indices_8h_1aa29f3a0bcb161b96b72e593c2bdf0419" kind="typedef"><name>FrameIndex</name></member>
-    <member refid="Indices_8h_1a5d98b515bfdfd0764e5dc7c27e65de23" kind="typedef"><name>TraversalIndex</name></member>
-    <member refid="Link_8h_1a39bc17f697110e44c09c2e6e1aa7fa57" kind="typedef"><name>LinkPtr</name></member>
-    <member refid="Link_8h_1a34779dc4741f85944c0e2f736dc7def2" kind="typedef"><name>LinkConstPtr</name></member>
-    <member refid="LinkState_8h_1ac93f1a5870ffbdb40436a8ab17b4df5a" kind="typedef"><name>LinkNetExternalWrenches</name></member>
-    <member refid="LinkState_8h_1ab0304c1c94e9d9f0bbd646fceaad6e40" kind="typedef"><name>LinkInternalWrenches</name></member>
-    <member refid="LinkState_8h_1a8467b5079b622cd683df2fcdfd16b07c" kind="typedef"><name>LinkNetTotalWrenchesWithoutGravity</name></member>
-    <member refid="LinkState_8h_1a4eebfd4c3b5feb2154a1de101578fb4a" kind="typedef"><name>LinkCompositeRigidBodyInertias</name></member>
-    <member refid="LinkState_8h_1a104b2ec0864d4c37b58b808b43630171" kind="typedef"><name>LinkProperAccArray</name></member>
-    <member refid="MovableJointImpl_8h_1ac4ab72af9658e6e1503c06a97786db7f" kind="typedef"><name>MovableJointImpl1</name></member>
-    <member refid="MovableJointImpl_8h_1a24b411fa2a181857fd60881b7a1fa644" kind="typedef"><name>MovableJointImpl2</name></member>
-    <member refid="MovableJointImpl_8h_1ae4671e7929209092bc1d6a72f460872a" kind="typedef"><name>MovableJointImpl3</name></member>
-    <member refid="MovableJointImpl_8h_1a66158274373829ef7c8694995a9d6929" kind="typedef"><name>MovableJointImpl4</name></member>
-    <member refid="MovableJointImpl_8h_1a5b8dfe13ce097fa3e505f492b7906c63" kind="typedef"><name>MovableJointImpl5</name></member>
-    <member refid="MovableJointImpl_8h_1af1c9c077a2177994db5ee45257af1d48" kind="typedef"><name>MovableJointImpl6</name></member>
-    <member refid="Span_8h_1a10c045523612bc8183a496020fecf982" kind="variable"><name>dynamic_extent</name></member>
-    <member refid="Utils_8h_1a09f55e26767f7112939284cfcea999f7" kind="variable"><name>UNKNOWN</name></member>
-    <member refid="Utils_8h_1abe71efaac97b8e18f842ccc49d07026a" kind="variable"><name>DEFAULT_TOL</name></member>
-    <member refid="AttitudeQuaternionEKF_8h_1a0dd93cfe8edb7763d1f57d6454c1c25f" kind="variable"><name>output_dimensions_with_magnetometer</name></member>
-    <member refid="AttitudeQuaternionEKF_8h_1a8772fb8ad891bd276db791f2e815de11" kind="variable"><name>output_dimensions_without_magnetometer</name></member>
-    <member refid="AttitudeQuaternionEKF_8h_1ae4a3a4ece8b00835bf57f387795ba015" kind="variable"><name>input_dimensions</name></member>
     <member refid="Indices_8h_1abb454ae2b12be8622ba842c70450352d" kind="variable"><name>LINK_INVALID_INDEX</name></member>
     <member refid="Indices_8h_1a159509c5b039dff9c6d63dd349e5b11b" kind="variable"><name>LINK_INVALID_NAME</name></member>
     <member refid="Indices_8h_1a00a66679a08e686adb0ee06a7bd1aabc" kind="variable"><name>JOINT_INVALID_INDEX</name></member>
@@ -4402,7 +4544,114 @@
     <member refid="Indices_8h_1a1a81b3c4ae6873a80debbb71bdc43218" kind="variable"><name>FRAME_INVALID_INDEX</name></member>
     <member refid="Indices_8h_1a6d57d4391d58c8fd9470846d4a72118f" kind="variable"><name>FRAME_INVALID_NAME</name></member>
     <member refid="Indices_8h_1a1ceb2215b00eb2c21af358eb9b7d88f4" kind="variable"><name>TRAVERSAL_INVALID_INDEX</name></member>
+    <member refid="ModelTestUtils_8h_1a58a0753df108d195a8c90ff75805b397" kind="variable"><name>SIMPLE_JOINT_TYPES</name></member>
+    <member refid="ModelTestUtils_8h_1a839997025ffcdd75bf67981792b456aa" kind="variable"><name>ALL_JOINT_TYPES</name></member>
     <member refid="Sensors_8h_1a27f6da1749325b5fabe94ceb7278f0df" kind="variable"><name>NR_OF_SENSOR_TYPES</name></member>
+    <member refid="Span_8h_1a10c045523612bc8183a496020fecf982" kind="variable"><name>dynamic_extent</name></member>
+    <member refid="Utils_8h_1a09f55e26767f7112939284cfcea999f7" kind="variable"><name>UNKNOWN</name></member>
+    <member refid="Utils_8h_1abe71efaac97b8e18f842ccc49d07026a" kind="variable"><name>DEFAULT_TOL</name></member>
+    <member refid="AttitudeQuaternionEKF_8h_1a0dd93cfe8edb7763d1f57d6454c1c25f" kind="variable"><name>output_dimensions_with_magnetometer</name></member>
+    <member refid="AttitudeQuaternionEKF_8h_1a8772fb8ad891bd276db791f2e815de11" kind="variable"><name>output_dimensions_without_magnetometer</name></member>
+    <member refid="AttitudeQuaternionEKF_8h_1ae4a3a4ece8b00835bf57f387795ba015" kind="variable"><name>input_dimensions</name></member>
+    <member refid="DenavitHartenberg_8h_1a9f5fda0dc8377f9fad3f8b60d73f1c7c" kind="function"><name>TransformFromDHCraig1989</name></member>
+    <member refid="DenavitHartenberg_8h_1a259b4c68b0f4b9ae9ce389ed14f4c712" kind="function"><name>TransformFromDH</name></member>
+    <member refid="DenavitHartenberg_8h_1ada11245ee6d17f4d64ccf59eeead8f07" kind="function"><name>ExtractDHChainFromModel</name></member>
+    <member refid="DenavitHartenberg_8h_1ac94534b93496e2703a218b38774c64a1" kind="function"><name>CreateModelFromDHChain</name></member>
+    <member refid="group__iDynTreeModel_1ga1f433a6725585332945762ed4e6b5fe5" kind="function"><name>ComputeLinearAndAngularMomentum</name></member>
+    <member refid="Dynamics_8h_1ae214683bf9d037ee89a0c070ed9ed78d" kind="function"><name>ComputeLinearAndAngularMomentumDerivativeBias</name></member>
+    <member refid="group__iDynTreeModel_1ga18613d41830aef7430e7a8a09fef98e1" kind="function"><name>RNEADynamicPhase</name></member>
+    <member refid="Dynamics_8h_1afa4f3546edbb4ab3e50a486e316a2470" kind="function"><name>CompositeRigidBodyAlgorithm</name></member>
+    <member refid="group__iDynTreeModel_1ga5879141982887fc0d049cc3645f10dd5" kind="function"><name>ArticulatedBodyAlgorithm</name></member>
+    <member refid="group__iDynTreeModel_1ga0c75db73b7682b9c524b0727b516b12b" kind="function"><name>InverseDynamicsInertialParametersRegressor</name></member>
+    <member refid="DynamicsLinearization_8h_1a0c9b6d083f99f1b6ffd1a6c3a7ae5e07" kind="function"><name>ForwardDynamicsLinearization</name></member>
+    <member refid="DynamicsLinearizationHelpers_8h_1a8f92a6a26be06461e7364405c553bd66" kind="function"><name>operator*</name></member>
+    <member refid="DynamicsLinearizationHelpers_8h_1aedfbcb0d62ea5bb9bf6fc476f3cc717a" kind="function"><name>operator*</name></member>
+    <member refid="DynamicsUtils_8h_1aed28749437ab0ff261382d34506ffad4" kind="function"><name>biasWrenchVelocityDerivative</name></member>
+    <member refid="group__iDynTreeModel_1ga41ad76666d447a42318ab5778b3ad18e" kind="function"><name>ForwardPositionKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a7d9ed3aeb57a5730beb59828bdf2301c" kind="function"><name>ForwardPositionKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a11cc6474718df311245c95f5452f7608" kind="function"><name>ForwardVelAccKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1af853268cad240fb96e9190b6c07d7dfb" kind="function"><name>ForwardPosVelAccKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a82da15110d52ad717aa6c145f1c8a681" kind="function"><name>ForwardPosVelKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a2848acd42a384966c3f2bbd760e29baa" kind="function"><name>ForwardAccKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a16f1071f088ed89178092de7b820558d" kind="function"><name>ForwardBiasAccKinematics</name></member>
+    <member refid="ForwardKinematics_8h_1a2249785bd035cf4d2f35851d9eb50d26" kind="function"><name>ForwardBiasAccKinematics</name></member>
+    <member refid="group__iDynTreeModel_1gab0b6f0ce3e6e175b1532bdd897fd83c4" kind="function"><name>FreeFloatingJacobianUsingLinkPos</name></member>
+    <member refid="ModelSensorsTransformers_8h_1af8355a73b30d3b5797fddae1f80ac778" kind="function"><name>createReducedModelAndSensors</name></member>
+    <member refid="ModelTestUtils_8h_1ae3c9d8004d8849d347af71dfbbc998f1" kind="function"><name>getRandomLink</name></member>
+    <member refid="ModelTestUtils_8h_1a8c8b8402523935bbb29f27cca71633ac" kind="function"><name>addRandomLinkToModel</name></member>
+    <member refid="ModelTestUtils_8h_1a4a517abc29acdad21e0893e8dc662524" kind="function"><name>addRandomLinkToModel</name></member>
+    <member refid="ModelTestUtils_8h_1abbc9efd0eed3caf7826a0f67056972f8" kind="function"><name>addRandomAdditionalFrameToModel</name></member>
+    <member refid="ModelTestUtils_8h_1a6480b737c82af8b72b95857960254bad" kind="function"><name>getRandomLinkIndexOfModel</name></member>
+    <member refid="ModelTestUtils_8h_1a75223c9a86126d90e70857cc48ff302e" kind="function"><name>getRandomLinkOfModel</name></member>
+    <member refid="ModelTestUtils_8h_1a2f8e6bff5b6a359c5bb88792dde90ac3" kind="function"><name>int2string</name></member>
+    <member refid="ModelTestUtils_8h_1a6be6dbbfd7e26ec48860775137fe7fd8" kind="function"><name>getRandomModel</name></member>
+    <member refid="ModelTestUtils_8h_1a20caf6d53482cbe05ce5715ccc1cc1a3" kind="function"><name>getRandomChain</name></member>
+    <member refid="ModelTestUtils_8h_1a5988c0a11fee2013e9ed68cf32147b95" kind="function"><name>getRandomModel</name></member>
+    <member refid="ModelTestUtils_8h_1a3993eed2007bd777ecdc90d9cc10b4b9" kind="function"><name>getRandomChain</name></member>
+    <member refid="ModelTestUtils_8h_1aff4391c79fb7cd4b59feed20b012d1d5" kind="function"><name>getRandomJointPositions</name></member>
+    <member refid="ModelTestUtils_8h_1a72bed46cd07c0617f3f59ffbbb0823a0" kind="function"><name>getRandomInverseDynamicsInputs</name></member>
+    <member refid="ModelTestUtils_8h_1a6dfdcf7499dff86e08695945132e8b3a" kind="function"><name>getRandomInverseDynamicsInputs</name></member>
+    <member refid="ModelTransformers_8h_1aab77480c8f9d5add110768cf75226508" kind="function"><name>removeFakeLinks</name></member>
+    <member refid="ModelTransformers_8h_1a0dfcb86d2d13eb1969493ee84da2f5c0" kind="function"><name>createReducedModel</name></member>
+    <member refid="ModelTransformers_8h_1ae25f91a29dc9b01ae310d5e1526fa273" kind="function"><name>createReducedModel</name></member>
+    <member refid="ModelTransformers_8h_1ab5223c4c29c1d2d583a363615f77531d" kind="function"><name>createReducedModel</name></member>
+    <member refid="ModelTransformers_8h_1aa6a9c44d5b80ede19b30f721f88d3679" kind="function"><name>createModelWithNormalizedJointNumbering</name></member>
+    <member refid="ModelTransformers_8h_1a3800ea0a0da713ba27da022845601b2f" kind="function"><name>extractSubModel</name></member>
+    <member refid="ModelTransformers_8h_1a43a3d5de5f629b00c5c7a607278a4f20" kind="function"><name>addValidNamesToAllSolidShapes</name></member>
+    <member refid="ModelTransformers_8h_1a133a097cc3ef37982c00cdd729829118" kind="function"><name>moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</name></member>
+    <member refid="ModelTransformers_8h_1a9a8fd1db7c7bbfb060362056a4ec65ee" kind="function"><name>removeAdditionalFramesFromModel</name></member>
+    <member refid="ModelTransformers_8h_1a4cc1aad44a17007ba45c17442ad6a978" kind="function"><name>convertSphericalJointsToThreeRevoluteJoints</name></member>
+    <member refid="ModelTransformers_8h_1a48383d5042c7b1a249db0440165131c3" kind="function"><name>convertThreeRevoluteJointsToSphericalJoint</name></member>
+    <member refid="group__iDynTreeSensors_1ga26f5afdf5245848ed0cf946cab8510d6" kind="function"><name>predictSensorsMeasurements</name></member>
+    <member refid="group__iDynTreeSensors_1ga85a09204a0c57c96bb77548d2a633677" kind="function"><name>predictSensorsMeasurementsFromRawBuffers</name></member>
+    <member refid="group__iDynTreeSensors_1gacf87de6a0acc7c79369e4ea587ef19bc" kind="function"><name>predictSensorsMeasurements</name></member>
+    <member refid="group__iDynTreeSensors_1gaa68c8cac6b85223f729cd8855627d35e" kind="function"><name>predictSensorsMeasurementsFromRawBuffers</name></member>
+    <member refid="Sensors_8h_1a784ae0ef50c758f0cf07ab414f432963" kind="function"><name>isLinkSensor</name></member>
+    <member refid="Sensors_8h_1a6edabe0d73bb9102d0ad456124c0f195" kind="function"><name>isJointSensor</name></member>
+    <member refid="Sensors_8h_1a6b73f760e18bf9860c623ddc8a0f376c" kind="function"><name>getSensorTypeSize</name></member>
+    <member refid="SubModel_8h_1a2f7475185a0d9ae6c7dcd2048d4a23fb" kind="function"><name>computeTransformToTraversalBase</name></member>
+    <member refid="SubModel_8h_1a3f3b031bdaab68634b5cc61f5e1e14b4" kind="function"><name>computeTransformToSubModelBase</name></member>
+    <member refid="group__iDynTreeICUB_1ga93e84fbc1880a920199aae0cbabd76ea" kind="function"><name>DHChainFromiKinChain</name></member>
+    <member refid="group__iDynTreeICUB_1gadb9ad80c8043481f2bb8f013542db690" kind="function"><name>modelFromiKinChain</name></member>
+    <member refid="group__iDynTreeICUB_1ga681d23161951646fcb60dc7681e59482" kind="function"><name>iKinLimbFromModel</name></member>
+    <member refid="group__iDynTreeICUB_1gaaedc638580c296a9a355975268ea25bb" kind="function"><name>iKinLimbFromDHChain</name></member>
+    <member refid="iKinConversionsImplementation_8h_1a907871ccc9e6e56fb19fa0af4c0854c8" kind="function"><name>iKinLink2DHLink</name></member>
+    <member refid="iKinConversionsImplementation_8h_1ae6d845189d4491128320b2c78c6082ec" kind="function"><name>DHLink2iKinLink</name></member>
+    <member refid="skinDynLibConversionsImplementation_8h_1abd0cb602d0a91817a13e042d47004d79" kind="function"><name>fromSkinDynLibToiDynTreeHelper</name></member>
+    <member refid="YARPConfigurationsLoader_8h_1a51e39202a162fa642eed01df66c75878" kind="function"><name>parseRotationMatrix</name></member>
+    <member refid="group__iDynTreeYARP_1ga5043dfa20b4ffc99d8dbdae5b15c0dae" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1gaa28c5100610c33e81bafbdad8cd65f74" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1gaf7ed1a24bb847b7742685eb9f59bb92b" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1gafcb81129ef0d16f5f1eb1cc6e1df4252" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1ga9020f2412b884fd0ef63e726c1342947" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1gaea2d5b8825259e8fa15c166cb843ee40" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1ga6b716f09fcb568a6b3eea04b44160f19" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1gaa01de51e3acfd87599aa688e4c3d32c0" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1ga0c1a2189345fb926b98f2d82219d5dd1" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1ga8c4d32377000e6629f2855a6d5aebf72" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1ga3e0ac29c597c34c171d29fb18127ab3b" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1ga63598edaacfc53e5728e944a0dab5ebb" kind="function"><name>toYarp</name></member>
+    <member refid="group__iDynTreeYARP_1ga056a45c2887a5f314c963c89bb16a270" kind="function"><name>toiDynTree</name></member>
+    <member refid="group__iDynTreeYARP_1gae1c1d7e3baf33d9b84f593330a3cf199" kind="function"><name>toiDynTree</name></member>
+    <member refid="YARPEigenConversions_8h_1ae7c28c545c2775b437536fd84dabc97d" kind="function"><name>toEigen</name></member>
+    <member refid="YARPEigenConversions_8h_1a19f060a1b963d4cdd58a142372675f6b" kind="function"><name>toEigen</name></member>
+    <member refid="YARPEigenConversions_8h_1a0fc1ec0d7de0f823d4a8c32524aaecd7" kind="function"><name>toEigen</name></member>
+    <member refid="YARPEigenConversions_8h_1a4f400cf54f7b7757adbaa768205b9df9" kind="function"><name>toEigen</name></member>
+    <member refid="InverseKinematics_8h_1a399f5a8eff425f1036038ee927fb81cb" kind="function"><name>sizeOfRotationParametrization</name></member>
+    <member refid="group__iDynTreeModelIO_1ga80941e03b0209a745a76fadc3264879a" kind="function"><name>dofsListFromURDF</name></member>
+    <member refid="group__iDynTreeModelIO_1ga657c7f9a0eedd9b8f71a54e6a83acdc0" kind="function"><name>dofsListFromURDFString</name></member>
+    <member refid="group__iDynTreeModelIO_1gaeaa7b0320760138dab8d2e7ba5525b2a" kind="function"><name>URDFFromModel</name></member>
+    <member refid="group__iDynTreeModelIO_1gab9223d51ca118bea013bbbde14d6e054" kind="function"><name>URDFStringFromModel</name></member>
+    <member refid="URDFParsingUtils_8h_1a91b6a382b3717636fb3a45a8ba4f8850" kind="function"><name>stringToDoubleWithClassicLocale</name></member>
+    <member refid="URDFParsingUtils_8h_1a9c8ea4244ff5dc2276f8008b53a609e8" kind="function"><name>stringToIntWithClassicLocale</name></member>
+    <member refid="URDFParsingUtils_8h_1ab5e3c195abc73e35657df0f831daab96" kind="function"><name>stringToUnsignedIntWithClassicLocale</name></member>
+    <member refid="URDFParsingUtils_8h_1a072b6eff9a6c9173d96ebef185343d90" kind="function"><name>doubleToStringWithClassicLocale</name></member>
+    <member refid="URDFParsingUtils_8h_1adffeb935ed6aad8d6f30705238117df8" kind="function"><name>intToString</name></member>
+    <member refid="URDFParsingUtils_8h_1a49c5650f4d8f43d3af304224dcf880c0" kind="function"><name>intToString</name></member>
+    <member refid="URDFParsingUtils_8h_1ab77f7c41e63dbfbfc327283490b7cb92" kind="function"><name>splitString</name></member>
+    <member refid="URDFParsingUtils_8h_1a8645d0238ce891d16d8d7be074bd33dc" kind="function"><name>vector3FromString</name></member>
+    <member refid="URDFParsingUtils_8h_1a5872c10e6e9f23dbeeb87ad4b503a5ba" kind="function"><name>vectorToString</name></member>
+    <member refid="URDFParsingUtils_8h_1ab55f4fdf60c8947b61adde47e0495b10" kind="function"><name>vector4FromString</name></member>
     <member refid="EigenHelpers_8h_1a5481a54f7c787fd4cf55a0f5fd21bbb0" kind="function"><name>toEigen</name></member>
     <member refid="EigenHelpers_8h_1a0d2e67fee79a1191ed16ab1d522b0078" kind="function"><name>toEigen</name></member>
     <member refid="EigenHelpers_8h_1a3f48b18c53414248343c3adaf5db988c" kind="function"><name>toEigen</name></member>
@@ -4423,6 +4672,8 @@
     <member refid="EigenHelpers_8h_1ad32fda4b9fa803472c83dea084ec14d8" kind="function"><name>fromEigen</name></member>
     <member refid="EigenHelpers_8h_1ae5b49ed3e6ce87e8262be598d41b01bb" kind="function"><name>skew</name></member>
     <member refid="EigenHelpers_8h_1a8e4347585aaeb967bfb2916b135b9357" kind="function"><name>unskew</name></member>
+    <member refid="EigenHelpers_8h_1afdc6aa2eb9f7336bab5dcc93ce434d69" kind="function"><name>wedge6dTo4x4d</name></member>
+    <member refid="EigenHelpers_8h_1aa729e01f528b84f9abd8029f3a05bc4f" kind="function"><name>vee4x4dTo6d</name></member>
     <member refid="EigenHelpers_8h_1ab923f233e9624344a28e361ddc2c4c10" kind="function"><name>setSubMatrix</name></member>
     <member refid="EigenHelpers_8h_1a46433c21ed1226e759f6d2471731ff20" kind="function"><name>setSubMatrix</name></member>
     <member refid="EigenHelpers_8h_1a15eb97c903bd5a5a44d7b36997a383f4" kind="function"><name>setSubMatrix</name></member>
@@ -4513,47 +4764,6 @@
     <member refid="InertialParametersSolidShapesHelpers_8h_1a3fc080109daad044981533bc143d1bee" kind="function"><name>computeBoundingBoxFromShape</name></member>
     <member refid="InertialParametersSolidShapesHelpers_8h_1a22b1c506654dc8a1589bbccc2ba32deb" kind="function"><name>computeBoxVertices</name></member>
     <member refid="ModelTransformersSolidShapes_8h_1adbe329aea649b6a379dfd7077ceb1eb9" kind="function"><name>approximateSolidShapesWithPrimitiveShape</name></member>
-    <member refid="YARPConfigurationsLoader_8h_1a51e39202a162fa642eed01df66c75878" kind="function"><name>parseRotationMatrix</name></member>
-    <member refid="group__iDynTreeYARP_1ga5043dfa20b4ffc99d8dbdae5b15c0dae" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1gaa28c5100610c33e81bafbdad8cd65f74" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1gaf7ed1a24bb847b7742685eb9f59bb92b" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1gafcb81129ef0d16f5f1eb1cc6e1df4252" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1ga9020f2412b884fd0ef63e726c1342947" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1gaea2d5b8825259e8fa15c166cb843ee40" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1ga6b716f09fcb568a6b3eea04b44160f19" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1gaa01de51e3acfd87599aa688e4c3d32c0" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1ga0c1a2189345fb926b98f2d82219d5dd1" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1ga8c4d32377000e6629f2855a6d5aebf72" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1ga3e0ac29c597c34c171d29fb18127ab3b" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1ga63598edaacfc53e5728e944a0dab5ebb" kind="function"><name>toYarp</name></member>
-    <member refid="group__iDynTreeYARP_1ga056a45c2887a5f314c963c89bb16a270" kind="function"><name>toiDynTree</name></member>
-    <member refid="group__iDynTreeYARP_1gae1c1d7e3baf33d9b84f593330a3cf199" kind="function"><name>toiDynTree</name></member>
-    <member refid="YARPEigenConversions_8h_1ae7c28c545c2775b437536fd84dabc97d" kind="function"><name>toEigen</name></member>
-    <member refid="YARPEigenConversions_8h_1a19f060a1b963d4cdd58a142372675f6b" kind="function"><name>toEigen</name></member>
-    <member refid="YARPEigenConversions_8h_1a0fc1ec0d7de0f823d4a8c32524aaecd7" kind="function"><name>toEigen</name></member>
-    <member refid="YARPEigenConversions_8h_1a4f400cf54f7b7757adbaa768205b9df9" kind="function"><name>toEigen</name></member>
-    <member refid="group__iDynTreeICUB_1ga93e84fbc1880a920199aae0cbabd76ea" kind="function"><name>DHChainFromiKinChain</name></member>
-    <member refid="group__iDynTreeICUB_1gadb9ad80c8043481f2bb8f013542db690" kind="function"><name>modelFromiKinChain</name></member>
-    <member refid="group__iDynTreeICUB_1ga681d23161951646fcb60dc7681e59482" kind="function"><name>iKinLimbFromModel</name></member>
-    <member refid="group__iDynTreeICUB_1gaaedc638580c296a9a355975268ea25bb" kind="function"><name>iKinLimbFromDHChain</name></member>
-    <member refid="iKinConversionsImplementation_8h_1a907871ccc9e6e56fb19fa0af4c0854c8" kind="function"><name>iKinLink2DHLink</name></member>
-    <member refid="iKinConversionsImplementation_8h_1ae6d845189d4491128320b2c78c6082ec" kind="function"><name>DHLink2iKinLink</name></member>
-    <member refid="skinDynLibConversionsImplementation_8h_1abd0cb602d0a91817a13e042d47004d79" kind="function"><name>fromSkinDynLibToiDynTreeHelper</name></member>
-    <member refid="group__iDynTreeModelIO_1ga80941e03b0209a745a76fadc3264879a" kind="function"><name>dofsListFromURDF</name></member>
-    <member refid="group__iDynTreeModelIO_1ga657c7f9a0eedd9b8f71a54e6a83acdc0" kind="function"><name>dofsListFromURDFString</name></member>
-    <member refid="group__iDynTreeModelIO_1gaeaa7b0320760138dab8d2e7ba5525b2a" kind="function"><name>URDFFromModel</name></member>
-    <member refid="group__iDynTreeModelIO_1gab9223d51ca118bea013bbbde14d6e054" kind="function"><name>URDFStringFromModel</name></member>
-    <member refid="URDFParsingUtils_8h_1a91b6a382b3717636fb3a45a8ba4f8850" kind="function"><name>stringToDoubleWithClassicLocale</name></member>
-    <member refid="URDFParsingUtils_8h_1a9c8ea4244ff5dc2276f8008b53a609e8" kind="function"><name>stringToIntWithClassicLocale</name></member>
-    <member refid="URDFParsingUtils_8h_1ab5e3c195abc73e35657df0f831daab96" kind="function"><name>stringToUnsignedIntWithClassicLocale</name></member>
-    <member refid="URDFParsingUtils_8h_1a072b6eff9a6c9173d96ebef185343d90" kind="function"><name>doubleToStringWithClassicLocale</name></member>
-    <member refid="URDFParsingUtils_8h_1adffeb935ed6aad8d6f30705238117df8" kind="function"><name>intToString</name></member>
-    <member refid="URDFParsingUtils_8h_1a49c5650f4d8f43d3af304224dcf880c0" kind="function"><name>intToString</name></member>
-    <member refid="URDFParsingUtils_8h_1ab77f7c41e63dbfbfc327283490b7cb92" kind="function"><name>splitString</name></member>
-    <member refid="URDFParsingUtils_8h_1a8645d0238ce891d16d8d7be074bd33dc" kind="function"><name>vector3FromString</name></member>
-    <member refid="URDFParsingUtils_8h_1a5872c10e6e9f23dbeeb87ad4b503a5ba" kind="function"><name>vectorToString</name></member>
-    <member refid="URDFParsingUtils_8h_1ab55f4fdf60c8947b61adde47e0495b10" kind="function"><name>vector4FromString</name></member>
-    <member refid="InverseKinematics_8h_1a399f5a8eff425f1036038ee927fb81cb" kind="function"><name>sizeOfRotationParametrization</name></member>
     <member refid="BerdyHelper_8h_1a39f8730ab92b19678c82e418b8c0f2a3" kind="function"><name>isLinkBerdyDynamicVariable</name></member>
     <member refid="BerdyHelper_8h_1a1d21c6d1ea587b6ed88d52bdf43fcf8b" kind="function"><name>isJointBerdyDynamicVariable</name></member>
     <member refid="BerdyHelper_8h_1a517a9e2101a59831cf912d8559b4900c" kind="function"><name>isDOFBerdyDynamicVariable</name></member>
@@ -4563,57 +4773,6 @@
     <member refid="ExternalWrenchesEstimation_8h_1a9c5c034c8fc89c4d0d19f17d2134a7a4" kind="function"><name>dynamicsEstimationForwardVelKinematics</name></member>
     <member refid="ExternalWrenchesEstimation_8h_1a2cf3011d218d8a98440bdcafdd1d54e6" kind="function"><name>computeLinkNetWrenchesWithoutGravity</name></member>
     <member refid="ExternalWrenchesEstimation_8h_1ab6c0784c22088705cc07732b5b29dd4b" kind="function"><name>estimateLinkContactWrenchesFromLinkNetExternalWrenches</name></member>
-    <member refid="DenavitHartenberg_8h_1a9f5fda0dc8377f9fad3f8b60d73f1c7c" kind="function"><name>TransformFromDHCraig1989</name></member>
-    <member refid="DenavitHartenberg_8h_1a259b4c68b0f4b9ae9ce389ed14f4c712" kind="function"><name>TransformFromDH</name></member>
-    <member refid="DenavitHartenberg_8h_1ada11245ee6d17f4d64ccf59eeead8f07" kind="function"><name>ExtractDHChainFromModel</name></member>
-    <member refid="DenavitHartenberg_8h_1ac94534b93496e2703a218b38774c64a1" kind="function"><name>CreateModelFromDHChain</name></member>
-    <member refid="group__iDynTreeModel_1ga1f433a6725585332945762ed4e6b5fe5" kind="function"><name>ComputeLinearAndAngularMomentum</name></member>
-    <member refid="Dynamics_8h_1ae214683bf9d037ee89a0c070ed9ed78d" kind="function"><name>ComputeLinearAndAngularMomentumDerivativeBias</name></member>
-    <member refid="group__iDynTreeModel_1ga18613d41830aef7430e7a8a09fef98e1" kind="function"><name>RNEADynamicPhase</name></member>
-    <member refid="Dynamics_8h_1afa4f3546edbb4ab3e50a486e316a2470" kind="function"><name>CompositeRigidBodyAlgorithm</name></member>
-    <member refid="group__iDynTreeModel_1ga5879141982887fc0d049cc3645f10dd5" kind="function"><name>ArticulatedBodyAlgorithm</name></member>
-    <member refid="group__iDynTreeModel_1ga0c75db73b7682b9c524b0727b516b12b" kind="function"><name>InverseDynamicsInertialParametersRegressor</name></member>
-    <member refid="DynamicsLinearization_8h_1a0c9b6d083f99f1b6ffd1a6c3a7ae5e07" kind="function"><name>ForwardDynamicsLinearization</name></member>
-    <member refid="DynamicsLinearizationHelpers_8h_1a8f92a6a26be06461e7364405c553bd66" kind="function"><name>operator*</name></member>
-    <member refid="DynamicsLinearizationHelpers_8h_1aedfbcb0d62ea5bb9bf6fc476f3cc717a" kind="function"><name>operator*</name></member>
-    <member refid="DynamicsUtils_8h_1aed28749437ab0ff261382d34506ffad4" kind="function"><name>biasWrenchVelocityDerivative</name></member>
-    <member refid="group__iDynTreeModel_1ga41ad76666d447a42318ab5778b3ad18e" kind="function"><name>ForwardPositionKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a7d9ed3aeb57a5730beb59828bdf2301c" kind="function"><name>ForwardPositionKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a11cc6474718df311245c95f5452f7608" kind="function"><name>ForwardVelAccKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1af853268cad240fb96e9190b6c07d7dfb" kind="function"><name>ForwardPosVelAccKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a82da15110d52ad717aa6c145f1c8a681" kind="function"><name>ForwardPosVelKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a2848acd42a384966c3f2bbd760e29baa" kind="function"><name>ForwardAccKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a16f1071f088ed89178092de7b820558d" kind="function"><name>ForwardBiasAccKinematics</name></member>
-    <member refid="ForwardKinematics_8h_1a2249785bd035cf4d2f35851d9eb50d26" kind="function"><name>ForwardBiasAccKinematics</name></member>
-    <member refid="group__iDynTreeModel_1gab0b6f0ce3e6e175b1532bdd897fd83c4" kind="function"><name>FreeFloatingJacobianUsingLinkPos</name></member>
-    <member refid="ModelSensorsTransformers_8h_1af8355a73b30d3b5797fddae1f80ac778" kind="function"><name>createReducedModelAndSensors</name></member>
-    <member refid="ModelTestUtils_8h_1ae3c9d8004d8849d347af71dfbbc998f1" kind="function"><name>getRandomLink</name></member>
-    <member refid="ModelTestUtils_8h_1aea1ae47d4bec72e35885ee56cf39578b" kind="function"><name>addRandomLinkToModel</name></member>
-    <member refid="ModelTestUtils_8h_1abbc9efd0eed3caf7826a0f67056972f8" kind="function"><name>addRandomAdditionalFrameToModel</name></member>
-    <member refid="ModelTestUtils_8h_1a6480b737c82af8b72b95857960254bad" kind="function"><name>getRandomLinkIndexOfModel</name></member>
-    <member refid="ModelTestUtils_8h_1a75223c9a86126d90e70857cc48ff302e" kind="function"><name>getRandomLinkOfModel</name></member>
-    <member refid="ModelTestUtils_8h_1a2f8e6bff5b6a359c5bb88792dde90ac3" kind="function"><name>int2string</name></member>
-    <member refid="ModelTestUtils_8h_1a0aa7e6e0780497939a29fe8d6b635834" kind="function"><name>getRandomModel</name></member>
-    <member refid="ModelTestUtils_8h_1aced0d1a54a20c982a5d1ec11f40d8b2f" kind="function"><name>getRandomChain</name></member>
-    <member refid="ModelTestUtils_8h_1aff4391c79fb7cd4b59feed20b012d1d5" kind="function"><name>getRandomJointPositions</name></member>
-    <member refid="ModelTestUtils_8h_1a72bed46cd07c0617f3f59ffbbb0823a0" kind="function"><name>getRandomInverseDynamicsInputs</name></member>
-    <member refid="ModelTransformers_8h_1aab77480c8f9d5add110768cf75226508" kind="function"><name>removeFakeLinks</name></member>
-    <member refid="ModelTransformers_8h_1a0dfcb86d2d13eb1969493ee84da2f5c0" kind="function"><name>createReducedModel</name></member>
-    <member refid="ModelTransformers_8h_1ae25f91a29dc9b01ae310d5e1526fa273" kind="function"><name>createReducedModel</name></member>
-    <member refid="ModelTransformers_8h_1aa6a9c44d5b80ede19b30f721f88d3679" kind="function"><name>createModelWithNormalizedJointNumbering</name></member>
-    <member refid="ModelTransformers_8h_1a3800ea0a0da713ba27da022845601b2f" kind="function"><name>extractSubModel</name></member>
-    <member refid="ModelTransformers_8h_1a43a3d5de5f629b00c5c7a607278a4f20" kind="function"><name>addValidNamesToAllSolidShapes</name></member>
-    <member refid="ModelTransformers_8h_1a133a097cc3ef37982c00cdd729829118" kind="function"><name>moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</name></member>
-    <member refid="ModelTransformers_8h_1a9a8fd1db7c7bbfb060362056a4ec65ee" kind="function"><name>removeAdditionalFramesFromModel</name></member>
-    <member refid="group__iDynTreeSensors_1ga26f5afdf5245848ed0cf946cab8510d6" kind="function"><name>predictSensorsMeasurements</name></member>
-    <member refid="group__iDynTreeSensors_1ga85a09204a0c57c96bb77548d2a633677" kind="function"><name>predictSensorsMeasurementsFromRawBuffers</name></member>
-    <member refid="group__iDynTreeSensors_1gacf87de6a0acc7c79369e4ea587ef19bc" kind="function"><name>predictSensorsMeasurements</name></member>
-    <member refid="group__iDynTreeSensors_1gaa68c8cac6b85223f729cd8855627d35e" kind="function"><name>predictSensorsMeasurementsFromRawBuffers</name></member>
-    <member refid="Sensors_8h_1a784ae0ef50c758f0cf07ab414f432963" kind="function"><name>isLinkSensor</name></member>
-    <member refid="Sensors_8h_1a6edabe0d73bb9102d0ad456124c0f195" kind="function"><name>isJointSensor</name></member>
-    <member refid="Sensors_8h_1a6b73f760e18bf9860c623ddc8a0f376c" kind="function"><name>getSensorTypeSize</name></member>
-    <member refid="SubModel_8h_1a2f7475185a0d9ae6c7dcd2048d4a23fb" kind="function"><name>computeTransformToTraversalBase</name></member>
-    <member refid="SubModel_8h_1a3f3b031bdaab68634b5cc61f5e1e14b4" kind="function"><name>computeTransformToSubModelBase</name></member>
   </compound>
   <compound refid="namespaceiDynTree_1_1details" kind="namespace"><name>iDynTree::details</name>
     <member refid="Span_8h_1adf168de4de79fc034114dd1bb64d9cca" kind="function"><name>operator+</name></member>
@@ -4706,6 +4865,8 @@
     <member refid="EigenHelpers_8h_1ad32fda4b9fa803472c83dea084ec14d8" kind="function"><name>fromEigen</name></member>
     <member refid="EigenHelpers_8h_1ae5b49ed3e6ce87e8262be598d41b01bb" kind="function"><name>skew</name></member>
     <member refid="EigenHelpers_8h_1a8e4347585aaeb967bfb2916b135b9357" kind="function"><name>unskew</name></member>
+    <member refid="EigenHelpers_8h_1afdc6aa2eb9f7336bab5dcc93ce434d69" kind="function"><name>wedge6dTo4x4d</name></member>
+    <member refid="EigenHelpers_8h_1aa729e01f528b84f9abd8029f3a05bc4f" kind="function"><name>vee4x4dTo6d</name></member>
     <member refid="EigenHelpers_8h_1ab923f233e9624344a28e361ddc2c4c10" kind="function"><name>setSubMatrix</name></member>
     <member refid="EigenHelpers_8h_1a46433c21ed1226e759f6d2471731ff20" kind="function"><name>setSubMatrix</name></member>
     <member refid="EigenHelpers_8h_1a15eb97c903bd5a5a44d7b36997a383f4" kind="function"><name>setSubMatrix</name></member>
@@ -4737,9 +4898,7 @@
   <compound refid="GeomVector3_8h" kind="file"><name>GeomVector3.h</name>
     <member refid="GeomVector3_8h_1ad00786c331484214ec14e850f805602f" kind="typedef"><name>LinearMotionVector3</name></member>
     <member refid="GeomVector3_8h_1a408c1ac9b6f50b7425becd9b7b20f351" kind="typedef"><name>LinVelocity</name></member>
-    <member refid="GeomVector3_8h_1ae032ae81e0b23b33446033eefb13e629" kind="typedef"><name>LinAcceleration</name></member>
     <member refid="GeomVector3_8h_1aff2ac4b45bb6926622fcfbf47dbe82b1" kind="typedef"><name>AngularMotionVector3</name></member>
-    <member refid="GeomVector3_8h_1a303a7b672a9817d74c5a6279fbfe5e34" kind="typedef"><name>AngVelocity</name></member>
     <member refid="GeomVector3_8h_1adb7dac766ffa576a0213970d650eda15" kind="typedef"><name>AngAcceleration</name></member>
     <member refid="GeomVector3_8h_1a220a484dfbd1e54951ef1aaf24ecd80c" kind="typedef"><name>LinearForceVector3</name></member>
     <member refid="GeomVector3_8h_1ac0ebd34fab318a785581c07d73cdffc4" kind="typedef"><name>LinMomentum</name></member>
@@ -5150,6 +5309,7 @@
   <compound refid="TransformConstraint_8h" kind="file"><name>TransformConstraint.h</name>
   </compound>
   <compound refid="AccelerometerSensor_8h" kind="file"><name>AccelerometerSensor.h</name>
+    <member refid="AccelerometerSensor_8h_1ae032ae81e0b23b33446033eefb13e629" kind="typedef"><name>LinAcceleration</name></member>
   </compound>
   <compound refid="Sensors_2AccelerometerSensor_8h" kind="file"><name>AccelerometerSensor.h</name>
   </compound>
@@ -5228,6 +5388,7 @@
   <compound refid="Model_2FreeFloatingState_8h" kind="file"><name>FreeFloatingState.h</name>
   </compound>
   <compound refid="GyroscopeSensor_8h" kind="file"><name>GyroscopeSensor.h</name>
+    <member refid="GyroscopeSensor_8h_1a303a7b672a9817d74c5a6279fbfe5e34" kind="typedef"><name>AngVelocity</name></member>
   </compound>
   <compound refid="Sensors_2GyroscopeSensor_8h" kind="file"><name>GyroscopeSensor.h</name>
   </compound>
@@ -5293,16 +5454,28 @@
   <compound refid="Model_2ModelTestUtils_8h" kind="file"><name>ModelTestUtils.h</name>
   </compound>
   <compound refid="ModelTestUtils_8h" kind="file"><name>ModelTestUtils.h</name>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7" kind="enum"><name>JointTypes</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a3c08d0d44f61d98e21ccb9ec424423d9" kind="enumvalue"><name>JOINT_FIXED</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a89707c27d3a57aa643323ca0666902dc" kind="enumvalue"><name>JOINT_REVOLUTE</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7ab384e38147a05edd9a4064e45bee473e" kind="enumvalue"><name>JOINT_PRISMATIC</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a359e4c290649bb8c74b43d86489a98fc" kind="enumvalue"><name>JOINT_REVOLUTE_SO2</name></member>
+    <member refid="ModelTestUtils_8h_1a2bcdae04682df042522f84e1d32573a7a9ebdbd2c8b1e85a49b05781cc821f088" kind="enumvalue"><name>JOINT_SPHERICAL</name></member>
+    <member refid="ModelTestUtils_8h_1a58a0753df108d195a8c90ff75805b397" kind="variable"><name>SIMPLE_JOINT_TYPES</name></member>
+    <member refid="ModelTestUtils_8h_1a839997025ffcdd75bf67981792b456aa" kind="variable"><name>ALL_JOINT_TYPES</name></member>
     <member refid="ModelTestUtils_8h_1ae3c9d8004d8849d347af71dfbbc998f1" kind="function"><name>getRandomLink</name></member>
-    <member refid="ModelTestUtils_8h_1aea1ae47d4bec72e35885ee56cf39578b" kind="function"><name>addRandomLinkToModel</name></member>
+    <member refid="ModelTestUtils_8h_1a8c8b8402523935bbb29f27cca71633ac" kind="function"><name>addRandomLinkToModel</name></member>
+    <member refid="ModelTestUtils_8h_1a4a517abc29acdad21e0893e8dc662524" kind="function"><name>addRandomLinkToModel</name></member>
     <member refid="ModelTestUtils_8h_1abbc9efd0eed3caf7826a0f67056972f8" kind="function"><name>addRandomAdditionalFrameToModel</name></member>
     <member refid="ModelTestUtils_8h_1a6480b737c82af8b72b95857960254bad" kind="function"><name>getRandomLinkIndexOfModel</name></member>
     <member refid="ModelTestUtils_8h_1a75223c9a86126d90e70857cc48ff302e" kind="function"><name>getRandomLinkOfModel</name></member>
     <member refid="ModelTestUtils_8h_1a2f8e6bff5b6a359c5bb88792dde90ac3" kind="function"><name>int2string</name></member>
-    <member refid="ModelTestUtils_8h_1a0aa7e6e0780497939a29fe8d6b635834" kind="function"><name>getRandomModel</name></member>
-    <member refid="ModelTestUtils_8h_1aced0d1a54a20c982a5d1ec11f40d8b2f" kind="function"><name>getRandomChain</name></member>
+    <member refid="ModelTestUtils_8h_1a6be6dbbfd7e26ec48860775137fe7fd8" kind="function"><name>getRandomModel</name></member>
+    <member refid="ModelTestUtils_8h_1a20caf6d53482cbe05ce5715ccc1cc1a3" kind="function"><name>getRandomChain</name></member>
+    <member refid="ModelTestUtils_8h_1a5988c0a11fee2013e9ed68cf32147b95" kind="function"><name>getRandomModel</name></member>
+    <member refid="ModelTestUtils_8h_1a3993eed2007bd777ecdc90d9cc10b4b9" kind="function"><name>getRandomChain</name></member>
     <member refid="ModelTestUtils_8h_1aff4391c79fb7cd4b59feed20b012d1d5" kind="function"><name>getRandomJointPositions</name></member>
     <member refid="ModelTestUtils_8h_1a72bed46cd07c0617f3f59ffbbb0823a0" kind="function"><name>getRandomInverseDynamicsInputs</name></member>
+    <member refid="ModelTestUtils_8h_1a6dfdcf7499dff86e08695945132e8b3a" kind="function"><name>getRandomInverseDynamicsInputs</name></member>
   </compound>
   <compound refid="Model_2ModelTransformers_8h" kind="file"><name>ModelTransformers.h</name>
   </compound>
@@ -5310,16 +5483,20 @@
     <member refid="ModelTransformers_8h_1aab77480c8f9d5add110768cf75226508" kind="function"><name>removeFakeLinks</name></member>
     <member refid="ModelTransformers_8h_1a0dfcb86d2d13eb1969493ee84da2f5c0" kind="function"><name>createReducedModel</name></member>
     <member refid="ModelTransformers_8h_1ae25f91a29dc9b01ae310d5e1526fa273" kind="function"><name>createReducedModel</name></member>
+    <member refid="ModelTransformers_8h_1ab5223c4c29c1d2d583a363615f77531d" kind="function"><name>createReducedModel</name></member>
     <member refid="ModelTransformers_8h_1aa6a9c44d5b80ede19b30f721f88d3679" kind="function"><name>createModelWithNormalizedJointNumbering</name></member>
     <member refid="ModelTransformers_8h_1a3800ea0a0da713ba27da022845601b2f" kind="function"><name>extractSubModel</name></member>
     <member refid="ModelTransformers_8h_1a43a3d5de5f629b00c5c7a607278a4f20" kind="function"><name>addValidNamesToAllSolidShapes</name></member>
     <member refid="ModelTransformers_8h_1a133a097cc3ef37982c00cdd729829118" kind="function"><name>moveLinkFramesToBeCompatibleWithURDFWithGivenBaseLink</name></member>
     <member refid="ModelTransformers_8h_1a9a8fd1db7c7bbfb060362056a4ec65ee" kind="function"><name>removeAdditionalFramesFromModel</name></member>
+    <member refid="ModelTransformers_8h_1a4cc1aad44a17007ba45c17442ad6a978" kind="function"><name>convertSphericalJointsToThreeRevoluteJoints</name></member>
+    <member refid="ModelTransformers_8h_1a48383d5042c7b1a249db0440165131c3" kind="function"><name>convertThreeRevoluteJointsToSphericalJoint</name></member>
   </compound>
   <compound refid="Model_2MovableJointImpl_8h" kind="file"><name>MovableJointImpl.h</name>
   </compound>
   <compound refid="MovableJointImpl_8h" kind="file"><name>MovableJointImpl.h</name>
     <member refid="MovableJointImpl_8h_1ac4ab72af9658e6e1503c06a97786db7f" kind="typedef"><name>MovableJointImpl1</name></member>
+    <member refid="MovableJointImpl_8h_1affe41311e5312f2897d5df6532e81143" kind="typedef"><name>MovableJointImpl21</name></member>
     <member refid="MovableJointImpl_8h_1a24b411fa2a181857fd60881b7a1fa644" kind="typedef"><name>MovableJointImpl2</name></member>
     <member refid="MovableJointImpl_8h_1ae4671e7929209092bc1d6a72f460872a" kind="typedef"><name>MovableJointImpl3</name></member>
     <member refid="MovableJointImpl_8h_1a66158274373829ef7c8694995a9d6929" kind="typedef"><name>MovableJointImpl4</name></member>
@@ -5361,6 +5538,8 @@
   </compound>
   <compound refid="Sensors_2PredictSensorsMeasurements_8h" kind="file"><name>PredictSensorsMeasurements.h</name>
   </compound>
+  <compound refid="RevoluteSO2Joint_8h" kind="file"><name>RevoluteSO2Joint.h</name>
+  </compound>
   <compound refid="Sensors_2Sensors_8h" kind="file"><name>Sensors.h</name>
   </compound>
   <compound refid="Sensors_8h" kind="file"><name>Sensors.h</name>
@@ -5386,6 +5565,8 @@
   <compound refid="Sensors_2ThreeAxisForceTorqueContactSensor_8h" kind="file"><name>ThreeAxisForceTorqueContactSensor.h</name>
   </compound>
   <compound refid="ThreeAxisForceTorqueContactSensor_8h" kind="file"><name>ThreeAxisForceTorqueContactSensor.h</name>
+  </compound>
+  <compound refid="SphericalJoint_8h" kind="file"><name>SphericalJoint.h</name>
   </compound>
   <compound refid="ModelCalibrationHelper_8h" kind="file"><name>ModelCalibrationHelper.h</name>
   </compound>

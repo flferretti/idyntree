@@ -33,9 +33,11 @@
     <innerfile refid="PredictSensorsMeasurements_8h">PredictSensorsMeasurements.h</innerfile>
     <innerfile refid="PrismaticJoint_8h">PrismaticJoint.h</innerfile>
     <innerfile refid="RevoluteJoint_8h">RevoluteJoint.h</innerfile>
+    <innerfile refid="RevoluteSO2Joint_8h">RevoluteSO2Joint.h</innerfile>
     <innerfile refid="Sensors_8h">Sensors.h</innerfile>
     <innerfile refid="SixAxisForceTorqueSensor_8h">SixAxisForceTorqueSensor.h</innerfile>
     <innerfile refid="SolidShapes_8h">SolidShapes.h</innerfile>
+    <innerfile refid="SphericalJoint_8h">SphericalJoint.h</innerfile>
     <innerfile refid="SubModel_8h">SubModel.h</innerfile>
     <innerfile refid="ThreeAxisAngularAccelerometerSensor_8h">ThreeAxisAngularAccelerometerSensor.h</innerfile>
     <innerfile refid="ThreeAxisForceTorqueContactSensor_8h">ThreeAxisForceTorqueContactSensor.h</innerfile>

@@ -6,6 +6,7 @@
     <includes local="no">type_traits</includes>
     <includes refid="Span_8h" local="no">iDynTree/Span.h</includes>
     <includes refid="Utils_8h" local="no">iDynTree/Utils.h</includes>
+    <includedby refid="IJoint_8h" local="no">iDynTree/IJoint.h</includedby>
     <includedby refid="Core_2MatrixView_8h" local="no">iDynTree/Core/MatrixView.h</includedby>
     <includedby refid="MatrixDynSize_8h" local="no">iDynTree/MatrixDynSize.h</includedby>
     <includedby refid="MatrixFixSize_8h" local="no">iDynTree/MatrixFixSize.h</includedby>
