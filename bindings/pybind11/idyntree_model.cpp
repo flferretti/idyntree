@@ -110,7 +110,15 @@ void jointClassDefinition(py::class_<IJoint>& joint)
         .def("get_static_friction", &IJoint::getStaticFriction)
         .def("set_joint_dynamics_type", &IJoint::setJointDynamicsType)
         .def("set_damping", &IJoint::setDamping)
-        .def("set_static_friction", &IJoint::setStaticFriction);
+        .def("set_static_friction", &IJoint::setStaticFriction)
+        .def("has_effort_limits", &IJoint::hasEffortLimits)
+        .def("enable_effort_limits", &IJoint::enableEffortLimits)
+        .def("get_effort_limit", &IJoint::getEffortLimit)
+        .def("set_effort_limit", &IJoint::setEffortLimit)
+        .def("has_velocity_limits", &IJoint::hasVelocityLimits)
+        .def("enable_velocity_limits", &IJoint::enableVelocityLimits)
+        .def("get_velocity_limit", &IJoint::getVelocityLimit)
+        .def("set_velocity_limit", &IJoint::setVelocityLimit);
 }
 
 void traversalClassDefinition(py::class_<Traversal>& traversal)
