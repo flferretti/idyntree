@@ -493,6 +493,98 @@ public:
     ///@}
 
     /**
+     * @name Joint effort limit methods.
+     *  Methods for handling effort limits of joints.
+     *
+     *  The effort limits are read from the URDF specification and represent
+     *  the maximum absolute torque (for revolute joints) or force (for prismatic joints)
+     *  that can be applied at the joint.
+     */
+    ///@{
+
+    /**
+     * Check if the joint has effort limits.
+     *
+     * @return true if the joint has effort limits, false otherwise
+     */
+    virtual bool hasEffortLimits() const = 0;
+
+    /**
+     * Enable or disable effort limits for the joint.
+     *
+     * @param[in] enable true to enable effort limits, false to disable
+     * @return true if everything went correctly, false otherwise
+     */
+    virtual bool enableEffortLimits(const bool enable) = 0;
+
+    /**
+     * Get the effort limit of the joint for the _index dof.
+     *
+     * @param[in] _index index of the dof for which the limit is obtained.
+     * @return the effort limit, or 0.0 if no limit is set.
+     */
+    virtual double getEffortLimit(const size_t _index) const = 0;
+
+    /**
+     * Set the effort limit for a dof of the joint.
+     *
+     * @param[in] _index index of the dof for which the limit is set.
+     * @param[in] effortLimit the effort limit value
+     * @return true if everything is correct, false otherwise.
+     * @note This just sets the internal effort limit of the joint.
+     *       To set them as enabled, you need to call the enableEffortLimits(true) method.
+     */
+    virtual bool setEffortLimit(const size_t _index, double effortLimit) = 0;
+
+    ///@}
+
+    /**
+     * @name Joint velocity limit methods.
+     *  Methods for handling velocity limits of joints.
+     *
+     *  The velocity limits are read from the URDF specification and represent
+     *  the maximum absolute velocity (angular velocity for revolute joints,
+     *  linear velocity for prismatic joints) that can be applied at the joint.
+     */
+    ///@{
+
+    /**
+     * Check if the joint has velocity limits.
+     *
+     * @return true if the joint has velocity limits, false otherwise
+     */
+    virtual bool hasVelocityLimits() const = 0;
+
+    /**
+     * Enable or disable velocity limits for the joint.
+     *
+     * @param[in] enable true to enable velocity limits, false to disable
+     * @return true if everything went correctly, false otherwise
+     */
+    virtual bool enableVelocityLimits(const bool enable) = 0;
+
+    /**
+     * Get the velocity limit of the joint for the _index dof.
+     *
+     * @param[in] _index index of the dof for which the limit is obtained.
+     * @return the velocity limit, or 0.0 if no limit is set.
+     */
+    virtual double getVelocityLimit(const size_t _index) const = 0;
+
+    /**
+     * Set the velocity limit for a dof of the joint.
+     *
+     * @param[in] _index index of the dof for which the limit is set.
+     * @param[in] velocityLimit the velocity limit value
+     * @return true if everything is correct, false otherwise.
+     * @note This just sets the internal velocity limit of the joint.
+     *       To set them as enabled, you need to call the enableVelocityLimits(true) method.
+     */
+    virtual bool setVelocityLimit(const size_t _index, double velocityLimit) = 0;
+
+    ///@}
+
+    /**
      * @name Methods to manipulate joint positions
      * Methods to manipulate joint positions
      */
