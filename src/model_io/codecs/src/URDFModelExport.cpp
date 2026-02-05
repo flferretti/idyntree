@@ -455,10 +455,22 @@ bool exportJoint(IJointConstPtr joint,
         ok = ok && doubleToStringWithClassicLocale(max, bufStr);
         xmlNewProp(limit_xml, BAD_CAST "upper", BAD_CAST bufStr.c_str());
 
-        // Workaround for https://github.com/robotology/idyntree/issues/955
-        ok = ok && doubleToStringWithClassicLocale(reallyHighLimit, bufStr);
+        // Write effort limit if available, otherwise use a high default value
+        double effortLimit = reallyHighLimit;
+        if (joint->hasEffortLimits())
+        {
+            effortLimit = joint->getEffortLimit(0);
+        }
+        ok = ok && doubleToStringWithClassicLocale(effortLimit, bufStr);
         xmlNewProp(limit_xml, BAD_CAST "effort", BAD_CAST bufStr.c_str());
-        ok = ok && doubleToStringWithClassicLocale(reallyHighLimit, bufStr);
+
+        // Write velocity limit if available, otherwise use a high default value
+        double velocityLimit = reallyHighLimit;
+        if (joint->hasVelocityLimits())
+        {
+            velocityLimit = joint->getVelocityLimit(0);
+        }
+        ok = ok && doubleToStringWithClassicLocale(velocityLimit, bufStr);
         xmlNewProp(limit_xml, BAD_CAST "velocity", BAD_CAST bufStr.c_str());
     }
 
