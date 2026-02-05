@@ -329,4 +329,46 @@ bool FixedJoint::normalizeJointPosCoords(iDynTree::Span<double> jntPos) const
     return true;
 }
 
+// EFFORT LIMIT METHODS
+bool FixedJoint::hasEffortLimits() const
+{
+    return false;
+}
+
+bool FixedJoint::enableEffortLimits(const bool /*enable*/)
+{
+    return false;
+}
+
+double FixedJoint::getEffortLimit(const size_t /*_index*/) const
+{
+    return 0.0;
+}
+
+bool FixedJoint::setEffortLimit(const size_t /*_index*/, double /*effortLimit*/)
+{
+    return false;
+}
+
+// VELOCITY LIMIT METHODS
+bool FixedJoint::hasVelocityLimits() const
+{
+    return false;
+}
+
+bool FixedJoint::enableVelocityLimits(const bool /*enable*/)
+{
+    return false;
+}
+
+double FixedJoint::getVelocityLimit(const size_t /*_index*/) const
+{
+    return 0.0;
+}
+
+bool FixedJoint::setVelocityLimit(const size_t /*_index*/, double /*velocityLimit*/)
+{
+    return false;
+}
+
 } // namespace iDynTree

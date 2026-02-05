@@ -200,6 +200,18 @@ public:
     // Documentation inherited
     virtual double getStaticFriction(const size_t _index) const;
 
+    // EFFORT LIMIT METHODS
+    virtual bool hasEffortLimits() const;
+    virtual bool enableEffortLimits(const bool enable);
+    virtual double getEffortLimit(const size_t _index) const;
+    virtual bool setEffortLimit(const size_t _index, double effortLimit);
+
+    // VELOCITY LIMIT METHODS
+    virtual bool hasVelocityLimits() const;
+    virtual bool enableVelocityLimits(const bool enable);
+    virtual double getVelocityLimit(const size_t _index) const;
+    virtual bool setVelocityLimit(const size_t _index, double velocityLimit);
+
     // Documentation inherited
     virtual bool getPositionDerivativeVelocityJacobian(const iDynTree::Span<const double> jntPos,
                                                        iDynTree::MatrixView<double>& jac) const;
