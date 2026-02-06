@@ -669,8 +669,11 @@ double RevoluteSO2Joint::getEffortLimit(const size_t /*_index*/) const
     return m_effortLimit;
 }
 
-bool RevoluteSO2Joint::setEffortLimit(const size_t /*_index*/, double effortLimit)
+bool RevoluteSO2Joint::setEffortLimit(const size_t _index, double effortLimit)
 {
+    if (_index >= 2)
+        return false;
+
     m_effortLimit = effortLimit;
     return true;
 }
@@ -692,8 +695,11 @@ double RevoluteSO2Joint::getVelocityLimit(const size_t /*_index*/) const
     return m_velocityLimit;
 }
 
-bool RevoluteSO2Joint::setVelocityLimit(const size_t /*_index*/, double velocityLimit)
+bool RevoluteSO2Joint::setVelocityLimit(const size_t _index, double velocityLimit)
 {
+    if (_index >= 2)
+        return false;
+
     m_velocityLimit = velocityLimit;
     return true;
 }
