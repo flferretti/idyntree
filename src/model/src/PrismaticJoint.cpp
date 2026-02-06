@@ -32,6 +32,8 @@ PrismaticJoint::PrismaticJoint()
     this->resetJointDynamics();
     m_hasEffortLimits = false;
     m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 PrismaticJoint::PrismaticJoint(const LinkIndex _link1,
