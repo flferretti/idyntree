@@ -14,6 +14,7 @@
 #include <iDynTree/TransformDerivative.h>
 #include <iDynTree/VectorDynSize.h>
 
+#include <iDynTree/FixedJoint.h>
 #include <iDynTree/PrismaticJoint.h>
 #include <iDynTree/RevoluteJoint.h>
 #include <iDynTree/RevoluteSO2Joint.h>
@@ -399,6 +400,12 @@ void validateJointBiasAcc(const JointType& joint,
 }
 
 /**
+ * Test effort and velocity limits for a specific joint type.
+ * This handles different behaviors for different joint types.
+ */
+template <typename JointType> void testJointLimits();
+
+/**
  * Test helper function that creates and tests a joint of a specific type
  * using both validation methods.
  */
@@ -456,6 +463,57 @@ template <typename JointType> void testJoint(bool printProgress = false)
             std::cout << typeid(JointType).name() << " test " << i << " passed." << std::endl;
         }
     }
+
+    // Test effort and velocity limits
+    testJointLimits<JointType>();
+}
+
+/**
+ * Test effort and velocity limits for a specific joint type.
+ */
+template <typename JointType> void testJointLimits()
+{
+    JointType joint;
+
+    joint.setDOFsOffset(0);
+    joint.setPosCoordsOffset(0);
+
+    ASSERT_IS_FALSE(joint.hasEffortLimits());
+    ASSERT_IS_FALSE(joint.hasVelocityLimits());
+    ASSERT_IS_FALSE(joint.hasPosLimits());
+    ASSERT_EQUAL_DOUBLE(joint.getEffortLimit(0), 0.0);
+    ASSERT_EQUAL_DOUBLE(joint.getVelocityLimit(0), 0.0);
+
+    // RevoluteJoint, PrismaticJoint and RevoluteSO2Joint
+    if (joint.getNrOfDOFs() == 1)
+    {
+        ASSERT_IS_TRUE(joint.setEffortLimit(0, 100.0));
+        ASSERT_IS_TRUE(joint.hasEffortLimits());
+        ASSERT_EQUAL_DOUBLE(joint.getEffortLimit(0), 100.0);
+
+        ASSERT_IS_TRUE(joint.setVelocityLimit(0, 10.0));
+        ASSERT_IS_TRUE(joint.hasVelocityLimits());
+        ASSERT_EQUAL_DOUBLE(joint.getVelocityLimit(0), 10.0);
+
+        ASSERT_IS_TRUE(joint.setPosLimits(0, -3.14, 3.14));
+        ASSERT_IS_TRUE(joint.hasPosLimits());
+        ASSERT_EQUAL_DOUBLE(joint.getMinPosLimit(0), -3.14);
+        ASSERT_EQUAL_DOUBLE(joint.getMaxPosLimit(0), 3.14);
+
+        double min, max;
+        ASSERT_IS_TRUE(joint.getPosLimits(0, min, max));
+        ASSERT_EQUAL_DOUBLE(min, -3.14);
+        ASSERT_EQUAL_DOUBLE(max, 3.14);
+
+        ASSERT_IS_FALSE(joint.setEffortLimit(1, 50.0));
+        ASSERT_IS_FALSE(joint.setVelocityLimit(1, 5.0));
+        ASSERT_IS_FALSE(joint.setPosLimits(1, -1.0, 1.0));
+    } else // FixedJoint and SphericalJoint
+    {
+        ASSERT_IS_FALSE(joint.setEffortLimit(0, 100.0));
+        ASSERT_IS_FALSE(joint.setVelocityLimit(0, 10.0));
+        ASSERT_IS_FALSE(joint.setPosLimits(0, -3.14, 3.14));
+    }
 }
 
 int main()
@@ -475,6 +533,10 @@ int main()
     // Test SphericalJoint
     std::cout << "Testing SphericalJoint..." << std::endl;
     testJoint<SphericalJoint>();
+
+    // Test FixedJoint
+    std::cout << "Testing FixedJoint..." << std::endl;
+    testJointLimits<FixedJoint>();
 
     std::cout << "All joint tests passed!" << std::endl;
     return EXIT_SUCCESS;
