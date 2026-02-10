@@ -330,6 +330,7 @@ bool FixedJoint::normalizeJointPosCoords(iDynTree::Span<double> jntPos) const
 }
 
 // EFFORT LIMIT METHODS
+// Fixed joints don't support effort limits
 bool FixedJoint::hasEffortLimits() const
 {
     return false;
@@ -351,6 +352,7 @@ bool FixedJoint::setEffortLimit(const size_t /*_index*/, double /*effortLimit*/)
 }
 
 // VELOCITY LIMIT METHODS
+// Fixed joints don't support velocity limits
 bool FixedJoint::hasVelocityLimits() const
 {
     return false;
