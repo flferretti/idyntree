@@ -487,14 +487,17 @@ template <typename JointType> void testJointLimits()
     // RevoluteJoint, PrismaticJoint and RevoluteSO2Joint
     if (joint.getNrOfDOFs() == 1)
     {
+        ASSERT_IS_TRUE(joint.enableEffortLimits(1));
         ASSERT_IS_TRUE(joint.setEffortLimit(0, 100.0));
         ASSERT_IS_TRUE(joint.hasEffortLimits());
         ASSERT_EQUAL_DOUBLE(joint.getEffortLimit(0), 100.0);
 
+        ASSERT_IS_TRUE(joint.enableVelocityLimits(1));
         ASSERT_IS_TRUE(joint.setVelocityLimit(0, 10.0));
         ASSERT_IS_TRUE(joint.hasVelocityLimits());
         ASSERT_EQUAL_DOUBLE(joint.getVelocityLimit(0), 10.0);
 
+        ASSERT_IS_TRUE(joint.enablePosLimits(1));
         ASSERT_IS_TRUE(joint.setPosLimits(0, -3.14, 3.14));
         ASSERT_IS_TRUE(joint.hasPosLimits());
         ASSERT_EQUAL_DOUBLE(joint.getMinPosLimit(0), -3.14);
@@ -504,10 +507,6 @@ template <typename JointType> void testJointLimits()
         ASSERT_IS_TRUE(joint.getPosLimits(0, min, max));
         ASSERT_EQUAL_DOUBLE(min, -3.14);
         ASSERT_EQUAL_DOUBLE(max, 3.14);
-
-        ASSERT_IS_FALSE(joint.setEffortLimit(1, 50.0));
-        ASSERT_IS_FALSE(joint.setVelocityLimit(1, 5.0));
-        ASSERT_IS_FALSE(joint.setPosLimits(1, -1.0, 1.0));
     } else // FixedJoint and SphericalJoint
     {
         ASSERT_IS_FALSE(joint.setEffortLimit(0, 100.0));
