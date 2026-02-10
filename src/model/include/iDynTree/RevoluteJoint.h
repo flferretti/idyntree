@@ -34,6 +34,14 @@ private:
     double m_minPos;
     double m_maxPos;
 
+    // Effort limits
+    bool m_hasEffortLimits;
+    double m_effortLimit;
+
+    // Velocity limits
+    bool m_hasVelocityLimits;
+    double m_velocityLimit;
+
     // Dynamic parameters
     void resetJointDynamics();
     JointDynamicsType m_joint_dynamics_type;
@@ -236,6 +244,18 @@ public:
     virtual double getStaticFriction(const size_t _index) const;
     virtual bool setDamping(const size_t _index, double damping);
     virtual bool setStaticFriction(const size_t _index, double staticFriction);
+
+    // EFFORT LIMIT METHODS
+    virtual bool hasEffortLimits() const;
+    virtual bool enableEffortLimits(const bool enable);
+    virtual double getEffortLimit(const size_t _index) const;
+    virtual bool setEffortLimit(const size_t _index, double effortLimit);
+
+    // VELOCITY LIMIT METHODS
+    virtual bool hasVelocityLimits() const;
+    virtual bool enableVelocityLimits(const bool enable);
+    virtual double getVelocityLimit(const size_t _index) const;
+    virtual bool setVelocityLimit(const size_t _index, double velocityLimit);
 };
 } // namespace iDynTree
 

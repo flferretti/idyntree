@@ -30,6 +30,10 @@ RevoluteJoint::RevoluteJoint()
     this->resetBuffers(0);
     this->disablePosLimits();
     this->resetJointDynamics();
+    m_hasEffortLimits = false;
+    m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 RevoluteJoint::RevoluteJoint(const LinkIndex _link1,
@@ -48,6 +52,10 @@ RevoluteJoint::RevoluteJoint(const LinkIndex _link1,
     this->resetBuffers(0);
     this->disablePosLimits();
     this->resetJointDynamics();
+    m_hasEffortLimits = false;
+    m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 RevoluteJoint::RevoluteJoint(const Transform& _link1_X_link2, const Axis& _rotation_axis_wrt_link1)
@@ -63,6 +71,10 @@ RevoluteJoint::RevoluteJoint(const Transform& _link1_X_link2, const Axis& _rotat
     this->resetBuffers(0);
     this->disablePosLimits();
     this->resetJointDynamics();
+    m_hasEffortLimits = false;
+    m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 RevoluteJoint::RevoluteJoint(const RevoluteJoint& other)
@@ -73,6 +85,10 @@ RevoluteJoint::RevoluteJoint(const RevoluteJoint& other)
     , m_hasPosLimits(other.m_hasPosLimits)
     , m_minPos(other.m_minPos)
     , m_maxPos(other.m_maxPos)
+    , m_hasEffortLimits(other.m_hasEffortLimits)
+    , m_effortLimit(other.m_effortLimit)
+    , m_hasVelocityLimits(other.m_hasVelocityLimits)
+    , m_velocityLimit(other.m_velocityLimit)
     , m_joint_dynamics_type(other.m_joint_dynamics_type)
     , m_damping(other.m_damping)
     , m_static_friction(other.m_static_friction)
@@ -484,6 +500,52 @@ bool RevoluteJoint::normalizeJointPosCoords(iDynTree::Span<double> jntPos) const
         return false; // Not enough data in the span
     }
     // No normalization needed for angular coordinates
+    return true;
+}
+
+// EFFORT LIMIT METHODS
+bool RevoluteJoint::hasEffortLimits() const
+{
+    return m_hasEffortLimits;
+}
+
+bool RevoluteJoint::enableEffortLimits(const bool enable)
+{
+    m_hasEffortLimits = enable;
+    return true;
+}
+
+double RevoluteJoint::getEffortLimit(const size_t /*_index*/) const
+{
+    return m_effortLimit;
+}
+
+bool RevoluteJoint::setEffortLimit(const size_t /*_index*/, double effortLimit)
+{
+    m_effortLimit = effortLimit;
+    return true;
+}
+
+// VELOCITY LIMIT METHODS
+bool RevoluteJoint::hasVelocityLimits() const
+{
+    return m_hasVelocityLimits;
+}
+
+bool RevoluteJoint::enableVelocityLimits(const bool enable)
+{
+    m_hasVelocityLimits = enable;
+    return true;
+}
+
+double RevoluteJoint::getVelocityLimit(const size_t /*_index*/) const
+{
+    return m_velocityLimit;
+}
+
+bool RevoluteJoint::setVelocityLimit(const size_t /*_index*/, double velocityLimit)
+{
+    m_velocityLimit = velocityLimit;
     return true;
 }
 

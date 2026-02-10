@@ -700,4 +700,48 @@ bool SphericalJoint::normalizeJointPosCoords(iDynTree::Span<double> jntPos) cons
     return true;
 }
 
+// EFFORT LIMIT METHODS
+// Spherical joints don't support effort limits
+bool SphericalJoint::hasEffortLimits() const
+{
+    return false;
+}
+
+bool SphericalJoint::enableEffortLimits(const bool /*enable*/)
+{
+    return false;
+}
+
+double SphericalJoint::getEffortLimit(const size_t /*_index*/) const
+{
+    return 0.0;
+}
+
+bool SphericalJoint::setEffortLimit(const size_t /*_index*/, double /*effortLimit*/)
+{
+    return false;
+}
+
+// VELOCITY LIMIT METHODS
+// Spherical joints don't support velocity limits
+bool SphericalJoint::hasVelocityLimits() const
+{
+    return false;
+}
+
+bool SphericalJoint::enableVelocityLimits(const bool /*enable*/)
+{
+    return false;
+}
+
+double SphericalJoint::getVelocityLimit(const size_t /*_index*/) const
+{
+    return 0.0;
+}
+
+bool SphericalJoint::setVelocityLimit(const size_t /*_index*/, double /*velocityLimit*/)
+{
+    return false;
+}
+
 } // namespace iDynTree

@@ -242,6 +242,20 @@ void JointElement::exitElementScope()
             {
                 info.joint->enablePosLimits(true);
                 info.joint->setPosLimits(0, m_limits->positionLower, m_limits->positionUpper);
+
+                // Set effort limits if they were specified
+                if (m_limits->effort > 0.0)
+                {
+                    info.joint->enableEffortLimits(true);
+                    info.joint->setEffortLimit(0, m_limits->effort);
+                }
+
+                // Set velocity limits if they were specified
+                if (m_limits->velocity > 0.0)
+                {
+                    info.joint->enableVelocityLimits(true);
+                    info.joint->setVelocityLimit(0, m_limits->velocity);
+                }
             }
         } else if (m_jointType == "revolute" || m_jointType == "prismatic")
         {

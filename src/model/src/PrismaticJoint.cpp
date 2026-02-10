@@ -30,6 +30,10 @@ PrismaticJoint::PrismaticJoint()
     this->resetBuffers(0);
     this->disablePosLimits();
     this->resetJointDynamics();
+    m_hasEffortLimits = false;
+    m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 PrismaticJoint::PrismaticJoint(const LinkIndex _link1,
@@ -48,6 +52,10 @@ PrismaticJoint::PrismaticJoint(const LinkIndex _link1,
     this->resetBuffers(0);
     this->disablePosLimits();
     this->resetJointDynamics();
+    m_hasEffortLimits = false;
+    m_effortLimit = 0.0;
+    m_hasVelocityLimits = false;
+    m_velocityLimit = 0.0;
 }
 
 PrismaticJoint::PrismaticJoint(const PrismaticJoint& other)
@@ -58,6 +66,10 @@ PrismaticJoint::PrismaticJoint(const PrismaticJoint& other)
     , m_hasPosLimits(other.m_hasPosLimits)
     , m_minPos(other.m_minPos)
     , m_maxPos(other.m_maxPos)
+    , m_hasEffortLimits(other.m_hasEffortLimits)
+    , m_effortLimit(other.m_effortLimit)
+    , m_hasVelocityLimits(other.m_hasVelocityLimits)
+    , m_velocityLimit(other.m_velocityLimit)
     , m_joint_dynamics_type(other.m_joint_dynamics_type)
     , m_damping(other.m_damping)
     , m_static_friction(other.m_static_friction)
@@ -467,6 +479,52 @@ bool PrismaticJoint::normalizeJointPosCoords(iDynTree::Span<double> jntPos) cons
         return false; // Not enough data in the span
     }
     // No normalization needed for linear coordinates
+    return true;
+}
+
+// EFFORT LIMIT METHODS
+bool PrismaticJoint::hasEffortLimits() const
+{
+    return m_hasEffortLimits;
+}
+
+bool PrismaticJoint::enableEffortLimits(const bool enable)
+{
+    m_hasEffortLimits = enable;
+    return true;
+}
+
+double PrismaticJoint::getEffortLimit(const size_t /*_index*/) const
+{
+    return m_effortLimit;
+}
+
+bool PrismaticJoint::setEffortLimit(const size_t /*_index*/, double effortLimit)
+{
+    m_effortLimit = effortLimit;
+    return true;
+}
+
+// VELOCITY LIMIT METHODS
+bool PrismaticJoint::hasVelocityLimits() const
+{
+    return m_hasVelocityLimits;
+}
+
+bool PrismaticJoint::enableVelocityLimits(const bool enable)
+{
+    m_hasVelocityLimits = enable;
+    return true;
+}
+
+double PrismaticJoint::getVelocityLimit(const size_t /*_index*/) const
+{
+    return m_velocityLimit;
+}
+
+bool PrismaticJoint::setVelocityLimit(const size_t /*_index*/, double velocityLimit)
+{
+    m_velocityLimit = velocityLimit;
     return true;
 }
 

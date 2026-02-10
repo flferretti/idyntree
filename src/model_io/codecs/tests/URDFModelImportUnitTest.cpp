@@ -6,6 +6,7 @@
 #include <iDynTree/TestUtils.h>
 
 #include <iDynTree/Model.h>
+#include <iDynTree/ModelExporter.h>
 #include <iDynTree/ModelLoader.h>
 #include <iDynTree/SphericalJoint.h>
 #include <iDynTree/URDFDofsImport.h>
@@ -369,6 +370,163 @@ void checkSphericalJointImport()
     loadAndValidate("ball");
 }
 
+void checkEffortAndVelocityLimits()
+{
+    // Test URDF with effort and velocity limits
+    std::string urdfString = R"(
+<robot name="test_limits">
+  <link name="base_link">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <link name="link1">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="revolute_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.57" upper="1.57" effort="100.0" velocity="10.0"/>
+  </joint>
+
+  <link name="link2">
+    <inertial>
+      <mass value="0.3"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="prismatic_joint" type="prismatic">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0.5 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="0.0" upper="0.5" effort="200.0" velocity="5.0"/>
+  </joint>
+</robot>
+)";
+
+    ModelLoader loader;
+    bool ok = loader.loadModelFromString(urdfString);
+    ASSERT_IS_TRUE(ok);
+
+    Model model = loader.model();
+
+    // Check revolute joint
+    JointIndex revoluteIdx = model.getJointIndex("revolute_joint");
+    ASSERT_IS_TRUE(revoluteIdx != JOINT_INVALID_INDEX);
+
+    IJointConstPtr revoluteJoint = model.getJoint(revoluteIdx);
+    ASSERT_IS_TRUE(revoluteJoint != nullptr);
+    ASSERT_EQUAL_DOUBLE(revoluteJoint->getNrOfDOFs(), 1);
+
+    // Check effort limits
+    ASSERT_IS_TRUE(revoluteJoint->hasEffortLimits());
+    ASSERT_EQUAL_DOUBLE(revoluteJoint->getEffortLimit(0), 100.0);
+
+    // Check velocity limits
+    ASSERT_IS_TRUE(revoluteJoint->hasVelocityLimits());
+    ASSERT_EQUAL_DOUBLE(revoluteJoint->getVelocityLimit(0), 10.0);
+
+    // Check prismatic joint
+    JointIndex prismaticIdx = model.getJointIndex("prismatic_joint");
+    ASSERT_IS_TRUE(prismaticIdx != JOINT_INVALID_INDEX);
+
+    IJointConstPtr prismaticJoint = model.getJoint(prismaticIdx);
+    ASSERT_IS_TRUE(prismaticJoint != nullptr);
+    ASSERT_EQUAL_DOUBLE(prismaticJoint->getNrOfDOFs(), 1);
+
+    // Check effort limits
+    ASSERT_IS_TRUE(prismaticJoint->hasEffortLimits());
+    ASSERT_EQUAL_DOUBLE(prismaticJoint->getEffortLimit(0), 200.0);
+
+    // Check velocity limits
+    ASSERT_IS_TRUE(prismaticJoint->hasVelocityLimits());
+    ASSERT_EQUAL_DOUBLE(prismaticJoint->getVelocityLimit(0), 5.0);
+
+    std::cerr << "URDF effort and velocity limits test passed" << std::endl;
+}
+
+void checkEffortAndVelocityLimitsRoundtrip()
+{
+    // Test that limits survive URDF export/import roundtrip
+    std::string urdfString = R"(<?xml version="1.0"?>
+<robot name="test_roundtrip">
+  <link name="base">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <link name="link1">
+    <inertial>
+      <mass value="0.5"/>
+      <origin xyz="0 0 0"/>
+      <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+    </inertial>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <parent link="base"/>
+    <child link="link1"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.14" upper="3.14" effort="50.0" velocity="2.5"/>
+  </joint>
+</robot>
+)";
+
+    // Load original model
+    ModelLoader loader1;
+    bool ok = loader1.loadModelFromString(urdfString);
+    ASSERT_IS_TRUE(ok);
+    Model originalModel = loader1.model();
+
+    // Export to URDF string
+    std::string exportedUrdf;
+    ModelExporter exporter;
+    ok = exporter.init(originalModel);
+    ASSERT_IS_TRUE(ok);
+    ok = exporter.exportModelToString(exportedUrdf);
+    ASSERT_IS_TRUE(ok);
+
+    std::cerr << "Exported URDF:\n" << exportedUrdf << std::endl;
+
+    // Re-import from exported URDF
+    ModelLoader loader2;
+    ok = loader2.loadModelFromString(exportedUrdf);
+    ASSERT_IS_TRUE(ok);
+    Model reimportedModel = loader2.model();
+
+    // Check that limits are preserved
+    JointIndex jointIdx = reimportedModel.getJointIndex("joint1");
+    ASSERT_IS_TRUE(jointIdx != JOINT_INVALID_INDEX);
+
+    IJointConstPtr joint = reimportedModel.getJoint(jointIdx);
+    ASSERT_IS_TRUE(joint != nullptr);
+
+    ASSERT_IS_TRUE(joint->hasEffortLimits());
+    ASSERT_EQUAL_DOUBLE(joint->getEffortLimit(0), 50.0);
+
+    ASSERT_IS_TRUE(joint->hasVelocityLimits());
+    ASSERT_EQUAL_DOUBLE(joint->getVelocityLimit(0), 2.5);
+
+    std::cerr << "URDF effort and velocity limits roundtrip test passed" << std::endl;
+}
+
 int main()
 {
     checkURDF(getAbsModelPath("/simple_model.urdf"), 1, 0, 0, 1, 1, 0, "link1");
@@ -386,6 +544,9 @@ int main()
     checkLoadReducedModelOrderIsKept(getAbsModelPath("iCubGenova02.urdf"));
     checkaddSensorFramesAsAdditionalFramesOption();
     checkSphericalJointImport();
+
+    checkEffortAndVelocityLimits();
+    checkEffortAndVelocityLimitsRoundtrip();
 
     return EXIT_SUCCESS;
 }
