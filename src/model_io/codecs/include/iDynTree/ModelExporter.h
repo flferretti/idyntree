@@ -90,7 +90,7 @@ struct ModelExporterOptions
 
     /**
      * Numerical precision for floating-point values in exported URDF.
-     * Specifies the maximum number of significant digits to use when
+     * If greater then 0, specify the precision (i.e. how many digits are generated) of floating point output when
      * converting doubles to strings.
      * Default: 0 (use maximum precision available from fpconv)
      */
