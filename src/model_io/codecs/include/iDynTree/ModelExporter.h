@@ -89,6 +89,14 @@ struct ModelExporterOptions
     std::string sphericalJointRevoluteJointPrefix;
 
     /**
+     * Numerical precision for floating-point values in exported URDF.
+     * Specifies the maximum number of significant digits to use when
+     * converting doubles to strings.
+     * Default: 0 (use maximum precision available from fpconv)
+     */
+    int numericalPrecision;
+
+    /**
      * Constructor.
      */
     ModelExporterOptions();
