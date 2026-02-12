@@ -624,7 +624,8 @@ void testNumericalPrecision()
         ok = exporter.exportModelToString(urdfString);
         ASSERT_IS_TRUE(ok);
 
-        std::cerr << "URDF with default (maximum) precision:" << std::endl << urdfString << std::endl;
+        std::cerr << "URDF with default (maximum) precision:" << std::endl
+                  << urdfString << std::endl;
 
         // Verify that the output contains high precision values
         ASSERT_IS_TRUE(urdfString.find("1.234567890") != std::string::npos);

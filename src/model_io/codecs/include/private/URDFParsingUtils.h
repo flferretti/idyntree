@@ -43,7 +43,9 @@ bool inline stringToUnsignedIntWithClassicLocale(const std::string& inStr, unsig
     return !(ss.fail());
 }
 
-bool inline doubleToStringWithClassicLocale(const double& inDouble, std::string& outStr, int precision = 0)
+bool inline doubleToStringWithClassicLocale(const double& inDouble,
+                                            std::string& outStr,
+                                            int precision = 0)
 {
     if (std::isnan(inDouble) || std::isinf(inDouble))
     {
@@ -57,8 +59,7 @@ bool inline doubleToStringWithClassicLocale(const double& inDouble, std::string&
         ss.imbue(std::locale::classic());
         ss << std::setprecision(precision) << inDouble;
         outStr = ss.str();
-    }
-    else
+    } else
     {
         // fpconv returns nul-terminated strings, that can be converted directly to C++ std::string
         // see

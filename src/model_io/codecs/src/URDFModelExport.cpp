@@ -87,7 +87,9 @@ bool exportInertial(const SpatialInertia& inertia, xmlNodePtr parent_element, in
     xmlNewProp(mass_xml, BAD_CAST "value", BAD_CAST bufStr.c_str());
 
     ok = ok
-         && exportTransform(Transform(Rotation::Identity(), inertia.getCenterOfMass()), inertial, precision);
+         && exportTransform(Transform(Rotation::Identity(), inertia.getCenterOfMass()),
+                            inertial,
+                            precision);
 
     xmlNodePtr inertia_xml = xmlNewChild(inertial, NULL, BAD_CAST "inertia", NULL);
     RotationalInertia rotInertia = inertia.getRotationalInertiaWrtCenterOfMass();
@@ -373,7 +375,8 @@ bool exportJoint(IJointConstPtr joint,
 
     // origin
     exportTransform(joint->getRestTransform(parentLink->getIndex(), childLink->getIndex()),
-                    joint_xml, precision);
+                    joint_xml,
+                    precision);
 
     if (joint->getNrOfDOFs() != 0)
     {
@@ -679,7 +682,13 @@ bool URDFStringFromModel(const iDynTree::Model& model,
         {
             LinkConstPtr parentLink = exportTraversal.getParentLink(trvIdx);
             IJointConstPtr parentJoint = exportTraversal.getParentJoint(trvIdx);
-            ok = ok && exportJoint(parentJoint, parentLink, visitedLink, processedModel, robot, precision);
+            ok = ok
+                 && exportJoint(parentJoint,
+                                parentLink,
+                                visitedLink,
+                                processedModel,
+                                robot,
+                                precision);
         }
 
         // Export link
